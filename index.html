@@ -173,26 +173,194 @@
         // Copy toàn bộ chữ trong file Excel/CSV dán vào giữa 2 dấu backtick ` `
         // ==========================================
         const STUDENT_CSV_DATA = `STT,MSSV,HoTen,Báo cáo kỹ năng,Nhóm
-(1),(2),(3),,
-1,25280007,HUỲNH HUYỀN TRÂN,Tuần 4-03,T6-01
-2,25280014,LÊ ĐÌNH QUỐC DŨNG,Tuần 4-03,T6-01
-3,25280032,NGUYỄN ĐOÀN QUỲNH NHƯ,Tuần 4-03,T6-01
-4,25280033,TRẦN HUỲNH NHƯ,Tuần 4-03,T6-01
-5,25280035,PHÙNG HOÀNG HỮU PHÚ,Tuần 4-03,T6-01
-6,25280038,NGUYỄN NGỌC BẢO PHƯƠNG,Tuần 4-03,T6-01
-7,25280040,TRƯƠNG MINH QUÂN,Tuần 4-03,T6-01
-8,25280044,TRẦN VĂN THỊNH,Tuần 4-03,T6-01
-9,25280064,NGUYỄN KIM,Tuần 4-03,T6-01
-157,25280089,VŨ THỊ QUỲNH NHƯ,Tuần 4-03,T7-07
-158,25110226,MAI DUY PHÁT,Tuần 4-03,T7-07
-159,25110177,NGUYỄN TẤN TRIỂN,Tuần 4-03,T7-07
-160,25280052,ĐẶNG HUỲNH KHÁNH VY,Tuần 4-03,T7-07
-161,25110152,NGUYỄN NGỌC DIỄM,Tuần 6-04,T7-08
-162,25110197,HỨA HOÀNG THÙY DƯƠNG,Tuần 6-04,T7-08
-163,25110154,ĐẶNG HỒNG DUYÊN,Tuần 6-04,T7-08
-164,25110196,VÕ TRỌNG ĐỨC,Tuần 6-04,T7-08
-165,25110206,NGUYỄN DUY MINH HUY,Tuần 6-04,T7-08
-166,25110217,NGUYỄN HOÀNG QUỐC LUẬT,Tuần 6-04,T7-08`;
+1,25280007,HUỲNH HUYỀN TRÂN,Tuần 4-03-Kỹ năng ứng dụng công nghệ số vào tìm kiếm và lưu trữ thông tin,T6-01
+2,25280014,LÊ ĐÌNH QUỐC DŨNG,Tuần 4-03-Kỹ năng ứng dụng công nghệ số vào tìm kiếm và lưu trữ thông tin,T6-01
+3,25280032,NGUYỄN ĐOÀN QUỲNH NHƯ,Tuần 4-03-Kỹ năng ứng dụng công nghệ số vào tìm kiếm và lưu trữ thông tin,T6-01
+4,25280033,TRẦN HUỲNH NHƯ,Tuần 4-03-Kỹ năng ứng dụng công nghệ số vào tìm kiếm và lưu trữ thông tin,T6-01
+5,25280035,PHÙNG HOÀNG HỮU PHÚ,Tuần 4-03-Kỹ năng ứng dụng công nghệ số vào tìm kiếm và lưu trữ thông tin,T6-01
+6,25280038,NGUYỄN NGỌC BẢO PHƯƠNG,Tuần 4-03-Kỹ năng ứng dụng công nghệ số vào tìm kiếm và lưu trữ thông tin,T6-01
+7,25280040,TRƯƠNG MINH QUÂN,Tuần 4-03-Kỹ năng ứng dụng công nghệ số vào tìm kiếm và lưu trữ thông tin,T6-01
+8,25280044,TRẦN VĂN THỊNH,Tuần 4-03-Kỹ năng ứng dụng công nghệ số vào tìm kiếm và lưu trữ thông tin,T6-01
+9,25280064,NGUYỄN KIM,Tuần 4-03-Kỹ năng ứng dụng công nghệ số vào tìm kiếm và lưu trữ thông tin,T6-01
+10,25280071,VÕ TRIẾT SƠN,Tuần 4-03-Kỹ năng ứng dụng công nghệ số vào tìm kiếm và lưu trữ thông tin,T6-01
+11,21110149,PHÚC HUỲNH NGỌC HỒNG,Tuần 4-02-Kỹ năng cân bằng giữa công việc và cuộc sống (Work-Life Balance),T6-02
+12,25280003,TRƯƠNG HỒ MINH THUẤN,Tuần 4-02-Kỹ năng cân bằng giữa công việc và cuộc sống (Work-Life Balance),T6-02
+13,25280016,PHẠM NGỌC HÂN,Tuần 4-02-Kỹ năng cân bằng giữa công việc và cuộc sống (Work-Life Balance),T6-02
+14,25280022,VÕ TUẤN KIỆT,Tuần 4-02-Kỹ năng cân bằng giữa công việc và cuộc sống (Work-Life Balance),T6-02
+15,25280025,LÊ HOÀNG CHI MAI,Tuần 4-02-Kỹ năng cân bằng giữa công việc và cuộc sống (Work-Life Balance),T6-02
+16,25280027,TÔN THẤT THIỆN MINH,Tuần 4-02-Kỹ năng cân bằng giữa công việc và cuộc sống (Work-Life Balance),T6-02
+17,25280028,LÂM KHẢ NGÂN,Tuần 4-02-Kỹ năng cân bằng giữa công việc và cuộc sống (Work-Life Balance),T6-02
+18,25280099,VŨ LONG ĐỨC,Tuần 4-02-Kỹ năng cân bằng giữa công việc và cuộc sống (Work-Life Balance),T6-02
+19,25280103,NGUYỄN HOÀNG MINH HIẾU,Tuần 4-02-Kỹ năng cân bằng giữa công việc và cuộc sống (Work-Life Balance),T6-02
+20,25280122,DOÃN TRỌNG QUÝ,Tuần 4-02-Kỹ năng cân bằng giữa công việc và cuộc sống (Work-Life Balance),T6-02
+21,25280126,TRẦN NGUYỄN TUỆ VƯƠNG,Tuần 4-02-Kỹ năng cân bằng giữa công việc và cuộc sống (Work-Life Balance),T6-02
+22,22280068,PHƯỚC NGUYỄN THANH,Tuần 5-01-Tư duy phát triển (Growth Mindset) và kỹ năng hồi phục sau thất bại,T6-03
+23,25110086,LÊ LONG NHẬT,Tuần 5-01-Tư duy phát triển (Growth Mindset) và kỹ năng hồi phục sau thất bại,T6-03
+24,25110090,VŨ PHAN QUỲNH NHI,Tuần 5-01-Tư duy phát triển (Growth Mindset) và kỹ năng hồi phục sau thất bại,T6-03
+25,25110094,NGUYỄN NHÃ PHONG,Tuần 5-01-Tư duy phát triển (Growth Mindset) và kỹ năng hồi phục sau thất bại,T6-03
+26,25110096,PHẠM THANH PHONG,Tuần 5-01-Tư duy phát triển (Growth Mindset) và kỹ năng hồi phục sau thất bại,T6-03
+27,25110100,TRẦN LÊ MINH PHÚC,Tuần 5-01-Tư duy phát triển (Growth Mindset) và kỹ năng hồi phục sau thất bại,T6-03
+28,25110110,HUỲNH PHAN QUỲNH,Tuần 5-01-Tư duy phát triển (Growth Mindset) và kỹ năng hồi phục sau thất bại,T6-03
+29,25110133,NGÔ ĐÀO HƯƠNG TRANG,Tuần 5-01-Tư duy phát triển (Growth Mindset) và kỹ năng hồi phục sau thất bại,T6-03
+30,25280013,LÝ TƯ DUNG,Tuần 5-01-Tư duy phát triển (Growth Mindset) và kỹ năng hồi phục sau thất bại,T6-03
+31,25280093,NGUYỄN THANH MINH ANH,Tuần 5-01-Tư duy phát triển (Growth Mindset) và kỹ năng hồi phục sau thất bại,T6-03
+32,25280004,VŨ KHÁNH DUY,Tuần 6-01-Kỹ năng Ghi chép hiệu quả và Kỹ năng đọc chủ động,T6-04
+33,25280006,NGUYỄN PHÚ THỊNH,Tuần 6-01-Kỹ năng Ghi chép hiệu quả và Kỹ năng đọc chủ động,T6-04
+34,25280010,ĐOÀN NGUYỄN GIA BẢO,Tuần 6-01-Kỹ năng Ghi chép hiệu quả và Kỹ năng đọc chủ động,T6-04
+35,25280018,HÀ VIỆT HOÀNG,Tuần 6-01-Kỹ năng Ghi chép hiệu quả và Kỹ năng đọc chủ động,T6-04
+36,25280021,TRẦN ĐĂNG KHOA,Tuần 6-01-Kỹ năng Ghi chép hiệu quả và Kỹ năng đọc chủ động,T6-04
+37,25280042,TRẦN THANH SƠN,Tuần 6-01-Kỹ năng Ghi chép hiệu quả và Kỹ năng đọc chủ động,T6-04
+38,25280050,NGUYỄN THẾ VINH,Tuần 6-01-Kỹ năng Ghi chép hiệu quả và Kỹ năng đọc chủ động,T6-04
+39,25280082,PHẠM KHÁNH AN,Tuần 6-01-Kỹ năng Ghi chép hiệu quả và Kỹ năng đọc chủ động,T6-04
+40,25280110,VŨ HOÀNG KHIÊM,Tuần 6-01-Kỹ năng Ghi chép hiệu quả và Kỹ năng đọc chủ động,T6-04
+41,25280120,NGUYỄN GIA PHÚ,Tuần 6-01-Kỹ năng Ghi chép hiệu quả và Kỹ năng đọc chủ động,T6-04
+42,25110104,NGUYỄN DƯƠNG NGỌC PHƯƠNG,Tuần 5-03-Kỹ năng quản lý tài chính cá nhân cho sinh viên,T6-05
+43,25110109,TRẦN TÚ QUYÊN,Tuần 5-03-Kỹ năng quản lý tài chính cá nhân cho sinh viên,T6-05
+44,25110113,ĐỒNG MINH TẤN,Tuần 5-03-Kỹ năng quản lý tài chính cá nhân cho sinh viên,T6-05
+45,25110114,VÒNG ĐẠI THẮNG,Tuần 5-03-Kỹ năng quản lý tài chính cá nhân cho sinh viên,T6-05
+46,25110124,LÊ HUY THÔNG,Tuần 5-03-Kỹ năng quản lý tài chính cá nhân cho sinh viên,T6-05
+47,25110127,DƯƠNG TẤN THUẬN,Tuần 5-03-Kỹ năng quản lý tài chính cá nhân cho sinh viên,T6-05
+48,25110130,NGUYỄN TRUNG TÍN,Tuần 5-03-Kỹ năng quản lý tài chính cá nhân cho sinh viên,T6-05
+49,25110134,HỒ HỮU TRÍ,Tuần 5-03-Kỹ năng quản lý tài chính cá nhân cho sinh viên,T6-05
+50,25110139,NGUYỄN MINH TÚ,Tuần 5-03-Kỹ năng quản lý tài chính cá nhân cho sinh viên,T6-05
+51,25110141,ĐÀM VĂN TUẤN,Tuần 5-03-Kỹ năng quản lý tài chính cá nhân cho sinh viên,T6-05
+52,25110142,ĐÀO ANH TUẤN,Tuần 5-03-Kỹ năng quản lý tài chính cá nhân cho sinh viên,T6-05
+53,25280005,TRẦN XUÂN KHÁNH NGỌC,"Tuần 4-01-Kỹ năng nâng cao năng lực thông tin cho sinh viên trong việc tiếp cận, chọn lọc và xử lý thông tin từ Internet",T6-06
+54,25280008,HUỲNH NGỌC TRÂM ANH,"Tuần 4-01-Kỹ năng nâng cao năng lực thông tin cho sinh viên trong việc tiếp cận, chọn lọc và xử lý thông tin từ Internet",T6-06
+55,25280045,VÕ MINH THƠ,"Tuần 4-01-Kỹ năng nâng cao năng lực thông tin cho sinh viên trong việc tiếp cận, chọn lọc và xử lý thông tin từ Internet",T6-06
+56,25280058,PHAN TRẦN GIA HÂN,"Tuần 4-01-Kỹ năng nâng cao năng lực thông tin cho sinh viên trong việc tiếp cận, chọn lọc và xử lý thông tin từ Internet",T6-06
+57,25280080,NGUYỄN THỊ YẾN VY,"Tuần 4-01-Kỹ năng nâng cao năng lực thông tin cho sinh viên trong việc tiếp cận, chọn lọc và xử lý thông tin từ Internet",T6-06
+58,25280081,PHAN NGỌC KHÁNH VY,"Tuần 4-01-Kỹ năng nâng cao năng lực thông tin cho sinh viên trong việc tiếp cận, chọn lọc và xử lý thông tin từ Internet",T6-06
+59,25280083,TRẦN NGUYỄN YẾN ANH,"Tuần 4-01-Kỹ năng nâng cao năng lực thông tin cho sinh viên trong việc tiếp cận, chọn lọc và xử lý thông tin từ Internet",T6-06
+60,25280090,ĐẶNG THỊ KIỀU TIÊN,"Tuần 4-01-Kỹ năng nâng cao năng lực thông tin cho sinh viên trong việc tiếp cận, chọn lọc và xử lý thông tin từ Internet",T6-06
+61,25280102,LÊ THANH HIẾU,"Tuần 4-01-Kỹ năng nâng cao năng lực thông tin cho sinh viên trong việc tiếp cận, chọn lọc và xử lý thông tin từ Internet",T6-06
+62,25280106,ĐINH DƯƠNG HUY,"Tuần 4-01-Kỹ năng nâng cao năng lực thông tin cho sinh viên trong việc tiếp cận, chọn lọc và xử lý thông tin từ Internet",T6-06
+63,25280115,LÊ VĂN NHÂN,"Tuần 4-01-Kỹ năng nâng cao năng lực thông tin cho sinh viên trong việc tiếp cận, chọn lọc và xử lý thông tin từ Internet",T6-06
+64,25280015,NGUYỄN THÙY DUYÊN,Tuần 6-02-Kỹ năng xử lý thông tin và dữ liệu trong nghiên cứu Khoa học,T6-07
+65,25280019,NGUYỄN QUANG HUY KHÁNH,Tuần 6-02-Kỹ năng xử lý thông tin và dữ liệu trong nghiên cứu Khoa học,T6-07
+66,25280029,TÔ NGUYỄN THẢO NGỌC,Tuần 6-02-Kỹ năng xử lý thông tin và dữ liệu trong nghiên cứu Khoa học,T6-07
+67,25280036,NGUYỄN TRƯỜNG PHÚC,Tuần 6-02-Kỹ năng xử lý thông tin và dữ liệu trong nghiên cứu Khoa học,T6-07
+68,25280068,HUỲNH THỊ KHÁNH NGÂN,Tuần 6-02-Kỹ năng xử lý thông tin và dữ liệu trong nghiên cứu Khoa học,T6-07
+69,25280092,LƯƠNG HUỲNH KỲ ANH,Tuần 6-02-Kỹ năng xử lý thông tin và dữ liệu trong nghiên cứu Khoa học,T6-07
+70,25280104,NGUYỄN TRỌNG PHƯỚC HƯNG,Tuần 6-02-Kỹ năng xử lý thông tin và dữ liệu trong nghiên cứu Khoa học,T6-07
+71,25280105,ĐẶNG ĐINH BẢO HUY,Tuần 6-02-Kỹ năng xử lý thông tin và dữ liệu trong nghiên cứu Khoa học,T6-07
+72,25280124,HỒ BẢO TIÊN,Tuần 6-02-Kỹ năng xử lý thông tin và dữ liệu trong nghiên cứu Khoa học,T6-07
+73,25280127,NGUYỄN ĐÌNH XUÂN VY,Tuần 6-02-Kỹ năng xử lý thông tin và dữ liệu trong nghiên cứu Khoa học,T6-07
+74,25280012,PHAN VĂN ĐẠT,Tuần 5-02-Kỹ năng thiết kế Prompt(Prompt Engineering) cơ bản để tự học và nghiên cứu cùng AI,T6-08
+75,25280017,TRẦN ĐỨC HIẾU,Tuần 5-02-Kỹ năng thiết kế Prompt(Prompt Engineering) cơ bản để tự học và nghiên cứu cùng AI,T6-08
+76,25280020,TRẦN TRỌNG KHIÊM,Tuần 5-02-Kỹ năng thiết kế Prompt(Prompt Engineering) cơ bản để tự học và nghiên cứu cùng AI,T6-08
+77,25280026,LÊ KHÁNH NHẬT MINH,Tuần 5-02-Kỹ năng thiết kế Prompt(Prompt Engineering) cơ bản để tự học và nghiên cứu cùng AI,T6-08
+78,25280075,DƯƠNG ĐỨC TOÀN,Tuần 5-02-Kỹ năng thiết kế Prompt(Prompt Engineering) cơ bản để tự học và nghiên cứu cùng AI,T6-08
+79,25280094,PHẠM THẾ ANH,Tuần 5-02-Kỹ năng thiết kế Prompt(Prompt Engineering) cơ bản để tự học và nghiên cứu cùng AI,T6-08
+80,25280096,NGUYỄN THỊ NHƯ BÌNH,Tuần 5-02-Kỹ năng thiết kế Prompt(Prompt Engineering) cơ bản để tự học và nghiên cứu cùng AI,T6-08
+81,25280101,LÊ NGUYỄN MINH HIẾU,Tuần 5-02-Kỹ năng thiết kế Prompt(Prompt Engineering) cơ bản để tự học và nghiên cứu cùng AI,T6-08
+82,25280111,NGUYỄN HỒ MINH KHÔI,Tuần 5-02-Kỹ năng thiết kế Prompt(Prompt Engineering) cơ bản để tự học và nghiên cứu cùng AI,T6-08
+83,25280112,NGUYỄN MINH KHÔI,Tuần 5-02-Kỹ năng thiết kế Prompt(Prompt Engineering) cơ bản để tự học và nghiên cứu cùng AI,T6-08
+84,25110188,TRẦN THANH BÌNH,Tuần 6-03-15. Kỹ năng bảo mật thông tin cá nhân và an toàn trên không gian mạng,T6-09
+85,25110194,VŨ ĐỖ TIẾN ĐẠT,Tuần 6-03-15. Kỹ năng bảo mật thông tin cá nhân và an toàn trên không gian mạng,T6-09
+86,25110207,NGUYỄN HOÀNG GIA HUY,Tuần 6-03-15. Kỹ năng bảo mật thông tin cá nhân và an toàn trên không gian mạng,T6-09
+87,25110215,ĐOÀN CÔNG LỘC,Tuần 6-03-15. Kỹ năng bảo mật thông tin cá nhân và an toàn trên không gian mạng,T6-09
+88,25110221,HOÀNG PHƯỚC NGUYÊN,Tuần 6-03-15. Kỹ năng bảo mật thông tin cá nhân và an toàn trên không gian mạng,T6-09
+89,25110227,PHẠM TIẾN PHÁT,Tuần 6-03-15. Kỹ năng bảo mật thông tin cá nhân và an toàn trên không gian mạng,T6-09
+90,25110228,NGUYỄN HOÀNG PHÚC,Tuần 6-03-15. Kỹ năng bảo mật thông tin cá nhân và an toàn trên không gian mạng,T6-09
+91,25280001,HUỲNH THỊ MỸ HƯNG,Tuần 6-03-15. Kỹ năng bảo mật thông tin cá nhân và an toàn trên không gian mạng,T6-09
+92,25280002,LÂM MINH THƯ,Tuần 6-03-15. Kỹ năng bảo mật thông tin cá nhân và an toàn trên không gian mạng,T6-09
+93,25280041,PHAN ĐẶNG THÁI SƠN,Tuần 6-03-15. Kỹ năng bảo mật thông tin cá nhân và an toàn trên không gian mạng,T6-09
+94,25110010,HOÀNG NHẬT ANH,Tuần 6-02-Kỹ năng tự học và xây dựng lộ trình học tập cá nhân (self-directed learning),T7-01
+95,25110011,NGUYỄN NGỌC PHƯƠNG ANH,Tuần 6-02-Kỹ năng tự học và xây dựng lộ trình học tập cá nhân (self-directed learning),T7-01
+96,25110025,LÊ QUANG ĐẠT,Tuần 6-02-Kỹ năng tự học và xây dựng lộ trình học tập cá nhân (self-directed learning),T7-01
+97,25110045,TRỊNH HUY HOÀNG,Tuần 6-02-Kỹ năng tự học và xây dựng lộ trình học tập cá nhân (self-directed learning),T7-01
+98,25110049,ĐINH XUÂN HUY,Tuần 6-02-Kỹ năng tự học và xây dựng lộ trình học tập cá nhân (self-directed learning),T7-01
+99,25110050,HUỲNH VŨ GIA HUY,Tuần 6-02-Kỹ năng tự học và xây dựng lộ trình học tập cá nhân (self-directed learning),T7-01
+100,25110055,ĐÀO NGUYỄN QUỐC KHANG,Tuần 6-02-Kỹ năng tự học và xây dựng lộ trình học tập cá nhân (self-directed learning),T7-01
+101,25110063,ĐỖ ĐĂNG KHOA,Tuần 6-02-Kỹ năng tự học và xây dựng lộ trình học tập cá nhân (self-directed learning),T7-01
+102,25110070,HOÀNG HẢI LONG,Tuần 6-02-Kỹ năng tự học và xây dựng lộ trình học tập cá nhân (self-directed learning),T7-01
+103,25110072,VŨ HOÀNG LONG,Tuần 6-02-Kỹ năng tự học và xây dựng lộ trình học tập cá nhân (self-directed learning),T7-01
+104,25280107,ĐINH THANH HUY,Tuần 5-03-Computational Thinking - Tư duy thuật toán,T7-02
+105,25280060,VÕ TRẦN ĐỨC HUY,Tuần 5-03-Computational Thinking - Tư duy thuật toán,T7-02
+106,25280063,PHẠM TRUNG KIÊN,Tuần 5-03-Computational Thinking - Tư duy thuật toán,T7-02
+107,25280085,NGUYỄN ANH KIỆT,Tuần 5-03-Computational Thinking - Tư duy thuật toán,T7-02
+108,25280086,VÕ PHÚC LỘC,Tuần 5-03-Computational Thinking - Tư duy thuật toán,T7-02
+109,25280087,NGUYỄN TUYẾT MINH,Tuần 5-03-Computational Thinking - Tư duy thuật toán,T7-02
+110,25280113,TRẦN KHÔI NGUYÊN,Tuần 5-03-Computational Thinking - Tư duy thuật toán,T7-02
+111,25280073,NGUYỄN LÊ ANH TÀI,Tuần 5-03-Computational Thinking - Tư duy thuật toán,T7-02
+112,25280048,TRƯƠNG ĐÌNH TRÍ,Tuần 5-03-Computational Thinking - Tư duy thuật toán,T7-02
+113,25280054,PHAN NGUYỄN TƯỜNG VY,Tuần 5-03-Computational Thinking - Tư duy thuật toán,T7-02
+114,25280056,NGÔ GIA BẢO,Tuần 4-01-Kỹ năng số hóa tài liệu và quản lí không gian lưu trữ cá nhân khoa học,T7-03
+115,25110200,NGUYỄN HỮU HOÀ,Tuần 4-01-Kỹ năng số hóa tài liệu và quản lí không gian lưu trữ cá nhân khoa học,T7-03
+116,25110078,VŨ HOÀNG NAM,Tuần 4-01-Kỹ năng số hóa tài liệu và quản lí không gian lưu trữ cá nhân khoa học,T7-03
+117,25110083,NGUYỄN LÊ PHI NGƯ,Tuần 4-01-Kỹ năng số hóa tài liệu và quản lí không gian lưu trữ cá nhân khoa học,T7-03
+118,25110091,NGUYỄN THANH NHIỆT,Tuần 4-01-Kỹ năng số hóa tài liệu và quản lí không gian lưu trữ cá nhân khoa học,T7-03
+119,25110233,TRẦN LÊ DIỄM QUỲNH,Tuần 4-01-Kỹ năng số hóa tài liệu và quản lí không gian lưu trữ cá nhân khoa học,T7-03
+120,25110115,NGUYỄN CHÍ THÀNH,Tuần 4-01-Kỹ năng số hóa tài liệu và quản lí không gian lưu trữ cá nhân khoa học,T7-03
+121,25110129,NGUYỄN ANH TIẾN,Tuần 4-01-Kỹ năng số hóa tài liệu và quản lí không gian lưu trữ cá nhân khoa học,T7-03
+122,25110240,LÊ NGỌC BẢO TRÂN,Tuần 4-01-Kỹ năng số hóa tài liệu và quản lí không gian lưu trữ cá nhân khoa học,T7-03
+123,25110241,LÊ THỊ THU TRANG,Tuần 4-01-Kỹ năng số hóa tài liệu và quản lí không gian lưu trữ cá nhân khoa học,T7-03
+124,25110051,NGUYỄN MINH HUY,"Tuần 6-01-Kỹ năng đàm phán, thuyết phục và bảo vệ quan điểm trước tập thể.",T7-04
+125,25110073,THÁI TUỆ MẪN,"Tuần 6-01-Kỹ năng đàm phán, thuyết phục và bảo vệ quan điểm trước tập thể.",T7-04
+126,25110085,ĐINH VĂN NHẬT,"Tuần 6-01-Kỹ năng đàm phán, thuyết phục và bảo vệ quan điểm trước tập thể.",T7-04
+127,25110103,LÊ NGUYÊN PHƯƠNG,"Tuần 6-01-Kỹ năng đàm phán, thuyết phục và bảo vệ quan điểm trước tập thể.",T7-04
+128,25110116,NGUYỄN THỊ PHƯƠNG THẢO,"Tuần 6-01-Kỹ năng đàm phán, thuyết phục và bảo vệ quan điểm trước tập thể.",T7-04
+129,25110125,PHẠM NGUYỄN ANH THƯ,"Tuần 6-01-Kỹ năng đàm phán, thuyết phục và bảo vệ quan điểm trước tập thể.",T7-04
+130,25110175,NGUYỄN PHƯỚC TÍN,"Tuần 6-01-Kỹ năng đàm phán, thuyết phục và bảo vệ quan điểm trước tập thể.",T7-04
+131,25110243,NGÔ PHÁT TRIỂN,"Tuần 6-01-Kỹ năng đàm phán, thuyết phục và bảo vệ quan điểm trước tập thể.",T7-04
+132,25110137,HOÀNG VIỆT TRUNG,"Tuần 6-01-Kỹ năng đàm phán, thuyết phục và bảo vệ quan điểm trước tập thể.",T7-04
+133,25110245,CHÂU THANH TÙNG,"Tuần 6-01-Kỹ năng đàm phán, thuyết phục và bảo vệ quan điểm trước tập thể.",T7-04
+134,25110192,LƯU CÔNG DANH,Tuần 5-01-30. kỹ năng quản lý tài chính cá nhân dành cho sinh viên,T7-05
+135,25110031,TRẦN TẤN DIỆN,Tuần 5-01-30. kỹ năng quản lý tài chính cá nhân dành cho sinh viên,T7-05
+136,25110202,PHẠM MINH HOÀNG,Tuần 5-01-30. kỹ năng quản lý tài chính cá nhân dành cho sinh viên,T7-05
+137,25110204,NGÔ QUỐC THIÊN HƯƠNG,Tuần 5-01-30. kỹ năng quản lý tài chính cá nhân dành cho sinh viên,T7-05
+138,25110210,NGUYỄN MINH KHÔI,Tuần 5-01-30. kỹ năng quản lý tài chính cá nhân dành cho sinh viên,T7-05
+139,25110212,TRẦN KHẢ KÍNH,Tuần 5-01-30. kỹ năng quản lý tài chính cá nhân dành cho sinh viên,T7-05
+140,25110214,NGUYỄN HOÀNG LÂM,Tuần 5-01-30. kỹ năng quản lý tài chính cá nhân dành cho sinh viên,T7-05
+141,25110216,HỒ NGỌC LONG,Tuần 5-01-30. kỹ năng quản lý tài chính cá nhân dành cho sinh viên,T7-05
+142,25110225,BÙI TẤN PHÁT,Tuần 5-01-30. kỹ năng quản lý tài chính cá nhân dành cho sinh viên,T7-05
+143,25110138,NGUYỄN MINH TRUNG,Tuần 5-01-30. kỹ năng quản lý tài chính cá nhân dành cho sinh viên,T7-05
+144,25110198,LÊ ĐỖ BẢO DUY,Tuần 5-02-Kỹ năng tìm kiếm tài liệu học thuật và trích dẫn quốc tế (APA_IEEE),T7-06
+145,25110190,NGUYỄN LÊ QUANG ĐẠI,Tuần 5-02-Kỹ năng tìm kiếm tài liệu học thuật và trích dẫn quốc tế (APA_IEEE),T7-06
+146,25110164,HUỲNH HOÀNG HUY,Tuần 5-02-Kỹ năng tìm kiếm tài liệu học thuật và trích dẫn quốc tế (APA_IEEE),T7-06
+147,25110002,PHAN NGUYỄN TIẾN KHOA,Tuần 5-02-Kỹ năng tìm kiếm tài liệu học thuật và trích dẫn quốc tế (APA_IEEE),T7-06
+148,25110232,TÔ HỮU QUỐC,Tuần 5-02-Kỹ năng tìm kiếm tài liệu học thuật và trích dẫn quốc tế (APA_IEEE),T7-06
+149,25110236,CHÂU HẢI THIÊN,Tuần 5-02-Kỹ năng tìm kiếm tài liệu học thuật và trích dẫn quốc tế (APA_IEEE),T7-06
+150,25110237,TRÀ MINH THIỆN,Tuần 5-02-Kỹ năng tìm kiếm tài liệu học thuật và trích dẫn quốc tế (APA_IEEE),T7-06
+151,25110178,HOÀNG MINH TUẤN,Tuần 5-02-Kỹ năng tìm kiếm tài liệu học thuật và trích dẫn quốc tế (APA_IEEE),T7-06
+152,25110193,LÊ ĐỖ TIẾN ĐẠT,Tuần 4-03-Tư duy phát triển (Growth Mindset) và kỹ năng phục hồi sau thất bại,T7-07
+153,25110157,LƯƠNG GIA HÂN,Tuần 4-03-Tư duy phát triển (Growth Mindset) và kỹ năng phục hồi sau thất bại,T7-07
+154,25110199,DANH NHỰT HÀO,Tuần 4-03-Tư duy phát triển (Growth Mindset) và kỹ năng phục hồi sau thất bại,T7-07
+155,25110004,NGUYỄN ĐÌNH HOÀNG,Tuần 4-03-Tư duy phát triển (Growth Mindset) và kỹ năng phục hồi sau thất bại,T7-07
+156,25110168,TRƯƠNG QUANG LONG,Tuần 4-03-Tư duy phát triển (Growth Mindset) và kỹ năng phục hồi sau thất bại,T7-07
+157,25280089,VŨ THỊ QUỲNH NHƯ,Tuần 4-03-Tư duy phát triển (Growth Mindset) và kỹ năng phục hồi sau thất bại,T7-07
+158,25110226,MAI DUY PHÁT,Tuần 4-03-Tư duy phát triển (Growth Mindset) và kỹ năng phục hồi sau thất bại,T7-07
+159,25110177,NGUYỄN TẤN TRIỂN,Tuần 4-03-Tư duy phát triển (Growth Mindset) và kỹ năng phục hồi sau thất bại,T7-07
+160,25280052,ĐẶNG HUỲNH KHÁNH VY,Tuần 4-03-Tư duy phát triển (Growth Mindset) và kỹ năng phục hồi sau thất bại,T7-07
+161,25110152,NGUYỄN NGỌC DIỄM,Tuần 6-04-Sơ cứu tâm lý và quản lý áp lực đồng trang lứa,T7-08
+162,25110197,HỨA HOÀNG THÙY DƯƠNG,Tuần 6-04-Sơ cứu tâm lý và quản lý áp lực đồng trang lứa,T7-08
+163,25110154,ĐẶNG HỒNG DUYÊN,Tuần 6-04-Sơ cứu tâm lý và quản lý áp lực đồng trang lứa,T7-08
+164,25110196,VÕ TRỌNG ĐỨC,Tuần 6-04-Sơ cứu tâm lý và quản lý áp lực đồng trang lứa,T7-08
+165,25110206,NGUYỄN DUY MINH HUY,Tuần 6-04-Sơ cứu tâm lý và quản lý áp lực đồng trang lứa,T7-08
+166,25110217,NGUYỄN HOÀNG QUỐC LUẬT,Tuần 6-04-Sơ cứu tâm lý và quản lý áp lực đồng trang lứa,T7-08
+167,25110218,LÊ VÕ TRÚC MY,Tuần 6-04-Sơ cứu tâm lý và quản lý áp lực đồng trang lứa,T7-08
+168,25110224,LÊ TRẦN HOÀNG NHÂN,Tuần 6-04-Sơ cứu tâm lý và quản lý áp lực đồng trang lứa,T7-08
+169,25110230,NHAN QUANG PHƯỚC,Tuần 6-04-Sơ cứu tâm lý và quản lý áp lực đồng trang lứa,T7-08
+170,25110234,NGÔ TRUNG SƠN,Tuần 6-04-Sơ cứu tâm lý và quản lý áp lực đồng trang lứa,T7-08
+171,25110183,CHU ĐÌNH AN,Tuần 6-03-Văn hóa ứng xử và giao tiếp chuẩn mực trên không gian mạng ( Netiquette),T7-09
+172,25110151,PHẠM ĐÀO VĂN CHƯƠNG,Tuần 6-03-Văn hóa ứng xử và giao tiếp chuẩn mực trên không gian mạng ( Netiquette),T7-09
+173,25110158,NGUYỄN NGỌC HIỂN,Tuần 6-03-Văn hóa ứng xử và giao tiếp chuẩn mực trên không gian mạng ( Netiquette),T7-09
+174,25110163,ĐẶNG NGUYỄN GIA HUY,Tuần 6-03-Văn hóa ứng xử và giao tiếp chuẩn mực trên không gian mạng ( Netiquette),T7-09
+175,25110165,NGUYỄN QUANG NHẬT HY,Tuần 6-03-Văn hóa ứng xử và giao tiếp chuẩn mực trên không gian mạng ( Netiquette),T7-09
+176,25110166,LÊ ANH KHOA,Tuần 6-03-Văn hóa ứng xử và giao tiếp chuẩn mực trên không gian mạng ( Netiquette),T7-09
+177,25280047,HUỲNH TÚ TOÀN,Tuần 6-03-Văn hóa ứng xử và giao tiếp chuẩn mực trên không gian mạng ( Netiquette),T7-09
+178,24110201,LUYỆN TRẦN HÙNG,Tuần 6-03-Văn hóa ứng xử và giao tiếp chuẩn mực trên không gian mạng ( Netiquette),T7-09
+179,25110146,NGUYỄN THIÊN VĂN,Tuần 6-03-Văn hóa ứng xử và giao tiếp chuẩn mực trên không gian mạng ( Netiquette),T7-09
+180,25280057,VŨ THÀNH CÔNG,Tuần 4-02-Kỹ năng kiểm chứng thông tin (fact-checking) và nhận diện tin giả trong kỷ nguyên AI,T7-10
+181,25280098,NGUYỄN TRẦN NGỌC DIỆP,Tuần 4-02-Kỹ năng kiểm chứng thông tin (fact-checking) và nhận diện tin giả trong kỷ nguyên AI,T7-10
+182,25280100,ĐINH NGUYÊN HIẾU,Tuần 4-02-Kỹ năng kiểm chứng thông tin (fact-checking) và nhận diện tin giả trong kỷ nguyên AI,T7-10
+183,25110048,ĐẶNG NHẬT HUY,Tuần 4-02-Kỹ năng kiểm chứng thông tin (fact-checking) và nhận diện tin giả trong kỷ nguyên AI,T7-10
+184,25110056,HÀNG VŨ MINH KHANG,Tuần 4-02-Kỹ năng kiểm chứng thông tin (fact-checking) và nhận diện tin giả trong kỷ nguyên AI,T7-10
+185,25280108,MAI TUẤN KHANH,Tuần 4-02-Kỹ năng kiểm chứng thông tin (fact-checking) và nhận diện tin giả trong kỷ nguyên AI,T7-10
+186,25280067,HOÀNG CÔNG MINH,Tuần 4-02-Kỹ năng kiểm chứng thông tin (fact-checking) và nhận diện tin giả trong kỷ nguyên AI,T7-10
+187,25280069,NGUYỄN TRỌNG NGHĨA,Tuần 4-02-Kỹ năng kiểm chứng thông tin (fact-checking) và nhận diện tin giả trong kỷ nguyên AI,T7-10
+188,25280079,NGUYỄN HỮU VINH,Tuần 4-02-Kỹ năng kiểm chứng thông tin (fact-checking) và nhận diện tin giả trong kỷ nguyên AI,T7-10`;
 
         // Các biến lưu trữ sau khi phân tích CSV
         let classList = new Set();
