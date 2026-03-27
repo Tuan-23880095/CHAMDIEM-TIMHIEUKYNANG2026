@@ -504,13 +504,15 @@
                 options: [
                     { id: "hb1", type: "positive", label: "Đúng chuẩn form mẫu", text: "Báo cáo trình bày đúng chuẩn (căn lề, đánh số trang, trang bìa, lời cảm ơn, mục lục, danh mục biểu đồ/hình ảnh, viết tắt)." },
                     { id: "hb9", type: "positive", label: "Cấu trúc mạch lạc", text: "Cấu trúc các đoạn văn mạch lạc, có tính liên kết cao và trình bày đẹp mắt." },
-                    { id: "hb7", type: "positive", label: "Biểu đồ tự vẽ tốt", text: "Có đầu tư sử dụng biểu đồ, đồ thị trực quan tự thiết kế rất chuyên nghiệp." },
+                    { id: "hb7", type: "positive", label: "Biểu đồ tốt", text: "Có đầu tư sử dụng biểu đồ, đồ thị trực quan tự thiết kế rất chuyên nghiệp." },
                     { id: "hb3", type: "positive", label: "Có hình ảnh minh họa", text: "Có ví dụ thực tế và hình ảnh minh họa phong phú trong báo cáo." },
                     { id: "hb2", type: "negative", label: "Sai/Thiếu form mẫu", text: "Báo cáo trình bày chưa đúng mẫu quy định, thiếu các thành phần bắt buộc." },
                     { id: "hb6", type: "negative", label: "Lỗi chính tả/Ngữ pháp", text: "Văn bản còn mắc nhiều lỗi chính tả, lỗi đánh máy và ngữ pháp cơ bản." },
                     { id: "hb4", type: "negative", label: "Thiếu hình ảnh", text: "Bài báo cáo hoàn toàn thiếu ví dụ và hình ảnh minh họa thực tế." },
                     { id: "hb5", type: "negative", label: "Trang bìa lỗi/Thiếu Logo", text: "Cần chú ý chỉnh chu lại trang bìa (thiếu logo trường/khoa, sai format)." },
-                    { id: "hb8", type: "negative", label: "Dấu hiệu sao chép", text: "Bài báo cáo có dấu hiệu cắt ghép, sao chép văn bản (copy-paste) mà không trích dẫn." }
+                    { id: "hb8", type: "negative", label: "Dấu hiệu sao chép", text: "Bài báo cáo có dấu hiệu cắt ghép, sao chép văn bản (copy-paste) mà không trích dẫn." },
+                    { id: "hb10", type: "negative", label: "word ngắn<>slide nhiều", text: "Bài báo cáo có dấu hiệu không tương đồng với bài thuyết trình." },
+                    { id: "hb11", type: "negative", label: "Quyển báo cáo thiếu rubric, thứ tự thuyết trình", text: "Bài báo cáo chưa đầy đủ thủ tục." }
                 ]
             },
             {
@@ -521,7 +523,7 @@
                     { id: "tl8", type: "positive", label: "Tài liệu quốc tế", text: "Biết cách tìm kiếm và tham khảo nhiều nguồn tài liệu bằng tiếng Anh/Quốc tế có giá trị cao." },
                     { id: "tl2", type: "negative", label: "Sai format APA/Sắp xếp", text: "Tài liệu tham khảo trình bày chưa đúng quy định tiêu chuẩn APA, chưa sắp xếp theo thứ tự alpha, cần chỉnh sửa cấu trúc." },
                     { id: "tl3", type: "negative", label: "Nguồn kém tin cậy", text: "Cần xem xét lại độ chính thống của tài liệu. Không chấp nhận các nguồn từ blog cá nhân, mạng xã hội." },
-                    { id: "tl9", type: "negative", label: "Lạm dụng Wikipedia", text: "Lạm dụng Wikipedia hoặc các trang hỏi đáp làm nguồn tham khảo chính." },
+                    { id: "tl9", type: "negative", label: "Lạm dụng Wikipedia/blog", text: "Lạm dụng Wikipedia hoặc các trang hỏi đáp làm nguồn tham khảo chính." },
                     { id: "tl7", type: "negative", label: "Tài liệu quá cũ", text: "Sử dụng nhiều tài liệu đã quá cũ, số liệu lỗi thời không còn phù hợp." },
                     { id: "tl4", type: "negative", label: "Có TLTK nhưng không trích dẫn", text: "Các tài liệu ở danh mục cuối bài không được trích dẫn (in-text citation) trong nội dung. Nếu không trích dẫn, hãy bỏ ra khỏi danh sách." },
                     { id: "tl5", type: "negative", label: "Thiếu trích dẫn nội dung", text: "Cần bổ sung trích dẫn nguồn trực tiếp vào các đoạn nội dung trong bài báo cáo." }
@@ -587,29 +589,12 @@
                     { id: "bd11", type: "negative", label: "Biểu cảm căng thẳng", text: "Biểu cảm quá căng thẳng, cau mày hoặc thái độ cợt nhả không phù hợp." },
                     { id: "bd12", type: "negative", label: "Chỉ tay vào khán giả", text: "Có thói quen chỉ ngón trỏ vào khán giả - một hành động ngôn ngữ cơ thể thiếu lịch sự." },
                     { id: "bd6", type: "negative", label: "Hành động vô thức thừa thãi", text: "Tay chân thừa thãi, có các hành động vô thức do căng thẳng (xoay bút, vò gấu áo, khoanh tay)." },
-                    { id: "bd7", type: "negative", label: "Trang phục chưa phù hợp", text: "Trang phục còn luộm thuộm, thiếu đồng bộ, chưa phù hợp với tính chất trang trọng của buổi báo cáo." }
+                    { id: "bd7", type: "negative", label: "Trang phục chưa phù hợp", text: "Trang phục còn luộm thuộm, thiếu đồng bộ, chưa phù hợp với tính chất trang trọng của buổi báo cáo." },
+                    { id: "bd3", type: "negative", label: "Không chào", text: "Mở đầu và kết thúc báo cáo, nhóm không thực hiện qui trình chào người nghe, thể hiện thái độ tôn trọng." }
                 ]
             },
             {
-                id: "c_teamwork", title: "8. Kỹ năng Làm việc Nhóm & Q&A", icon: "fa-users",
-                options: [
-                    { id: "tw1", type: "positive", label: "Chuyển phần mượt mà, hỗ trợ", text: "Tính đồng đội cao, tập dượt kỹ lưỡng. Chuyển phần mượt mà, biết hỗ trợ lấp chỗ trống cho nhau." },
-                    { id: "tw8", type: "positive", label: "Xử lý sự cố (Backup plan) tốt", text: "Nhóm có kế hoạch dự phòng tốt, xử lý sự cố kỹ thuật/quên bài rất bình tĩnh." },
-                    { id: "tw10", type: "positive", label: "Ghi chép câu hỏi cẩn thận", text: "Kỹ năng lắng nghe tốt: ghi chép cẩn thận các câu hỏi của khán giả trước khi trả lời." },
-                    { id: "tw12", type: "positive", label: "Phối hợp bổ sung ý Q&A", text: "Câu trả lời có sự đóng góp, bổ sung ý nhịp nhàng từ nhiều thành viên khác nhau trong nhóm." },
-                    { id: "tw2", type: "positive", label: "Trả lời Q&A đúng trọng tâm", text: "Giữ thái độ cởi mở và trả lời rất đúng trọng tâm vấn đề được hỏi." },
-                    { id: "tw3", type: "negative", label: "Rời rạc, thiếu tập dượt", text: "Nhóm thể hiện sự thiếu tập dượt chung, nội dung rời rạc, người nói sau lặp ý người trước." },
-                    { id: "tw4", type: "negative", label: "Lệch pha (Slide != Lời nói)", text: "Sự cố 'lệch pha': Người bấm slide và người thuyết trình không khớp nhau." },
-                    { id: "tw9", type: "negative", label: "Đổ lỗi đồng đội", text: "Có biểu hiện đùn đẩy, đổ lỗi cho nhau ngay trên sân khấu khi gặp sự cố." },
-                    { id: "tw5", type: "negative", label: "Thời lượng không đều", text: "Phân chia thời lượng không đồng đều: Có người 'gánh' thời gian quá nhiều." },
-                    { id: "tw6", type: "negative", label: "Thái độ người chờ kém", text: "Thành viên chờ đến lượt nói có thái độ thiếu chuyên nghiệp (nói chuyện riêng, bấm điện thoại)." },
-                    { id: "tw7", type: "negative", label: "Q&A vòng vo / Đùn đẩy", text: "Quá trình Q&A còn lúng túng, đùn đẩy nhau trả lời, trả lời vòng vo né tránh trọng tâm." },
-                    { id: "tw11", type: "negative", label: "Cắt lời người hỏi", text: "Mắc lỗi ngắt ngang lời Giảng viên/Khán giả khi họ đang đặt câu hỏi hoặc nhận xét." },
-                    { id: "tw13", type: "negative", label: "Trả lời sai kiến thức nền", text: "Nhóm trả lời sai những kiến thức nền tảng cơ bản của chuyên ngành." }
-                ]
-            },
-            {
-                id: "c_attitude", title: "9. Thái độ & Trách nhiệm", icon: "fa-star",
+                id: "c_attitude", title: "8. Thái độ & Trách nhiệm", icon: "fa-star",
                 options: [
                     { id: "td1", type: "positive", label: "Nộp bài đúng hạn", text: "Nhóm tuân thủ tốt kỷ luật, nộp bài báo cáo đúng thời hạn quy định." },
                     { id: "td3", type: "positive", label: "Cầu thị, lắng nghe", text: "Thể hiện tinh thần cầu thị, cởi mở tiếp thu các ý kiến đóng góp từ Giảng viên và lớp." },
