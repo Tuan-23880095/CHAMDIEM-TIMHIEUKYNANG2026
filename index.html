@@ -50,19 +50,19 @@
             <div class="bg-white rounded-xl shadow-sm p-5 border border-gray-100">
                 <h2 class="font-semibold text-lg border-b pb-2 mb-4 text-gray-700"><i class="fas fa-info-circle mr-2 text-blue-500"></i>Thông Tin Báo Cáo & Danh Sách</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                     <div>
                         <label class="block text-xs font-medium text-gray-500 mb-1">Tên Giảng Viên</label>
                         <input type="text" id="gvName" value="ThS.Đinh Thị Kim Liên" class="w-full border rounded-lg p-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
                     </div>
-                    <div class="w-full">
+                    <div class="md:col-span-3 w-full">
                       <label class="block text-xs font-medium text-gray-500 mb-1">Chủ đề / Đề tài</label>
                       <textarea 
                         id="topicName" 
                         placeholder="Tên dự án..." 
                         rows="1"
-                        oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"
-                        class="w-full border rounded-lg p-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none resize-none overflow-hidden min-h-[40px]"
+                        oninput="this.style.height='auto'; this.style.height=this.scrollHeight+'px'"
+                        class="w-full border rounded-lg p-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none resize-none overflow-y-hidden min-h-[40px]"
                       ></textarea>
                     </div>
                     <div>
