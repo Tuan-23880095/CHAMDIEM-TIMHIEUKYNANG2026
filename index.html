@@ -501,173 +501,222 @@
             }
             generateFinalText();
         }
-
-        // ==========================================
-        // DATA: ĐÁNH GIÁ NHÓM (50+ Tiêu Chí)
+// ==========================================
+        // DATA: ĐÁNH GIÁ NHÓM (Cặp Đối Lập & Rất Ngắn Gọn)
         // ==========================================
         const groupCriteriaData = [
             {
                 id: "c_thoigian", title: "1. Quản lý Thời gian & Sĩ số", icon: "fa-clock",
                 options: [
-                    { id: "t1", type: "neutral", label: "Đúng thời gian", text: "Nhóm trình bày đúng thời gian quy định." },
-                    { id: "t2", type: "negative", label: "Trễ < 5 phút", text: "Trình bày lố thời gian quy định dưới 5 phút." },
-                    { id: "t3", type: "negative", label: "Trễ 10 phút", text: "Trình bày lố thời gian khá dài (khoảng 10 phút), cần kiểm soát tốt lượng thông tin." },
-                    { id: "t4", type: "negative", label: "Trễ > 15 phút", text: "Vi phạm nghiêm trọng thời gian quy định (lố hơn 15 phút), phân bổ thời lượng thất bại." },
-                    { id: "t7", type: "positive", label: "Chuẩn bị kỹ thuật sớm", text: "Nhóm đến sớm, chủ động kiểm tra và chuẩn bị thiết bị trình chiếu kỹ lưỡng." },
-                    { id: "t8", type: "positive", label: "Thời lượng đồng đều", text: "Phân bổ thời gian thuyết trình giữa các thành viên khá cân đối, đồng đều." },
-                    { id: "t5", type: "positive", label: "Sĩ số đầy đủ", text: "Số lượng thành viên tham dự đầy đủ." },
-                    { id: "t6", type: "negative", label: "Vắng thành viên", text: "Số lượng thành viên tham dự không đầy đủ." }
+                    { id: "t1", type: "positive", label: "Đúng giờ", text: "Trình bày đúng thời gian quy định." },
+                    { id: "t2", type: "negative", label: "Trễ giờ (< 5p)", text: "Lố giờ dưới 5 phút." },
+                    { id: "t3", type: "negative", label: "Trễ giờ (> 10p)", text: "Lố giờ nghiêm trọng, không kiểm soát được thời lượng." },
+                    
+                    { id: "t8", type: "positive", label: "Chia giờ đều", text: "Phân bổ thời lượng nói đều giữa các thành viên." },
+                    { id: "t9", type: "negative", label: "Chia giờ lệch", text: "Thời lượng nói của các thành viên quá chênh lệch." },
+                    
+                    { id: "t5", type: "positive", label: "Đủ sĩ số", text: "Nhóm có mặt đầy đủ." },
+                    { id: "t6", type: "negative", label: "Vắng người", text: "Nhóm vắng thành viên không lý do." },
+
+                    { id: "t7", type: "positive", label: "Chuẩn bị sớm", text: "Đến sớm, chủ động setup kỹ thuật chiếu." },
+                    { id: "t10", type: "negative", label: "Setup chậm trễ", text: "Lên báo cáo mới loay hoay setup, mất thời gian." }
                 ]
             },
             {
                 id: "c_hinhthuc_bc", title: "2. Hình thức Báo cáo (Word/PDF)", icon: "fa-book",
                 options: [
-                    { id: "hb1", type: "positive", label: "Đúng chuẩn form mẫu", text: "Báo cáo trình bày đúng chuẩn (căn lề, đánh số trang, trang bìa, lời cảm ơn, mục lục, danh mục biểu đồ/hình ảnh, viết tắt)." },
-                    { id: "hb9", type: "positive", label: "Cấu trúc mạch lạc", text: "Cấu trúc các đoạn văn mạch lạc, có tính liên kết cao và trình bày đẹp mắt." },
-                    { id: "hb7", type: "positive", label: "Biểu đồ tốt", text: "Có đầu tư sử dụng biểu đồ, đồ thị trực quan tự thiết kế rất chuyên nghiệp." },
-                    { id: "hb3", type: "positive", label: "Có hình ảnh minh họa", text: "Có ví dụ thực tế và hình ảnh minh họa phong phú trong báo cáo." },
-                    { id: "hb2", type: "negative", label: "Sai/Thiếu form mẫu", text: "Báo cáo trình bày chưa đúng mẫu quy định, thiếu các thành phần bắt buộc." },
-                    { id: "hb6", type: "negative", label: "Lỗi chính tả/Ngữ pháp", text: "Văn bản còn mắc nhiều lỗi chính tả, lỗi đánh máy và ngữ pháp cơ bản." },
-                    { id: "hb4", type: "negative", label: "Thiếu hình ảnh", text: "Bài báo cáo hoàn toàn thiếu ví dụ và hình ảnh minh họa thực tế." },
-                    { id: "hb5", type: "negative", label: "Trang bìa lỗi/Thiếu Logo", text: "Cần chú ý chỉnh chu lại trang bìa (thiếu logo trường/khoa, sai format)." },
-                    { id: "hb8", type: "negative", label: "Dấu hiệu sao chép", text: "Bài báo cáo có dấu hiệu cắt ghép, sao chép văn bản (copy-paste) mà không trích dẫn." },
-                    { id: "hb10", type: "negative", label: "word ngắn<>slide nhiều", text: "Bài báo cáo có dấu hiệu không tương đồng với bài thuyết trình." },
-                    { id: "hb11", type: "negative", label: "Quyển báo cáo thiếu rubric, thứ tự thuyết trình", text: "Bài báo cáo chưa đầy đủ thủ tục." }
+                    { id: "hb1", type: "positive", label: "Đúng form mẫu", text: "Căn lề, font chữ, mục lục... chuẩn quy định." },
+                    { id: "hb2", type: "negative", label: "Sai form mẫu", text: "Sai lề, sai font, dãn dòng hoặc đánh số trang lộn xộn." },
+
+                    { id: "hb9", type: "positive", label: "Bố cục mạch lạc", text: "Cấu trúc rõ ràng, phân cấp chương mục logic." },
+                    { id: "hb12", type: "negative", label: "Bố cục lộn xộn", text: "Đánh số mục lộn xộn, thiếu logic." },
+
+                    { id: "hb3", type: "positive", label: "Có hình/biểu đồ", text: "Có hình ảnh, đồ thị minh họa thực tế." },
+                    { id: "hb4", type: "negative", label: "Thiếu hình/biểu", text: "Toàn chữ, không có hình ảnh hay biểu đồ." },
+
+                    { id: "hb13", type: "positive", label: "Chuẩn chính tả", text: "Văn bản chỉn chu, không sai lỗi chính tả/ngữ pháp." },
+                    { id: "hb6", type: "negative", label: "Sai chính tả", text: "Còn nhiều lỗi chính tả, đánh máy cơ bản." },
+
+                    { id: "hb14", type: "positive", label: "Bìa chuẩn", text: "Trang bìa đầy đủ logo, thông tin đúng tỷ lệ." },
+                    { id: "hb5", type: "negative", label: "Bìa lỗi/Thiếu logo", text: "Logo méo, sai tỷ lệ hoặc thiếu thông tin." },
+
+                    { id: "hb15", type: "positive", label: "Văn phong tự viết", text: "Hành văn tự nhiên, có đầu tư chất xám." },
+                    { id: "hb8", type: "negative", label: "Copy/Đạo văn", text: "Cắt ghép mạng, copy-paste không trích dẫn." },
+
+                    { id: "hb16", type: "positive", label: "Khớp slide", text: "Nội dung Word và Slide đồng nhất." },
+                    { id: "hb10", type: "negative", label: "Lệch slide", text: "Báo cáo Word sơ sài nhưng Slide lại nhiều chữ." },
+
+                    { id: "hb17", type: "positive", label: "Đủ thủ tục", text: "Đủ Rubric, phiếu đánh giá, thứ tự trình bày." },
+                    { id: "hb11", type: "negative", label: "Thiếu thủ tục", text: "Thiếu Rubric hoặc các thủ tục cứng bắt buộc." }
                 ]
             },
             {
-                id: "c_tailieu", title: "3. Tài liệu tham khảo (Citation)", icon: "fa-quote-right",
+                id: "c_tailieu", title: "3. Tài liệu tham khảo", icon: "fa-quote-right",
                 options: [
-                    { id: "tl1", type: "positive", label: "Chuẩn APA, chính thống", text: "Tài liệu tham khảo trình bày chuẩn APA, nguồn trích dẫn chính thống, có độ tin cậy cao." },
-                    { id: "tl6", type: "positive", label: "Nguồn mới (< 5 năm)", text: "Nhóm biết cập nhật và sử dụng các nguồn tài liệu mới xuất bản trong vòng 5 năm gần đây." },
-                    { id: "tl8", type: "positive", label: "Tài liệu quốc tế", text: "Biết cách tìm kiếm và tham khảo nhiều nguồn tài liệu bằng tiếng Anh/Quốc tế có giá trị cao." },
-                    { id: "tl2", type: "negative", label: "Sai format APA/Sắp xếp", text: "Tài liệu tham khảo trình bày chưa đúng quy định tiêu chuẩn APA, chưa sắp xếp theo thứ tự alpha, cần chỉnh sửa cấu trúc." },
-                    { id: "tl3", type: "negative", label: "Nguồn kém tin cậy", text: "Cần xem xét lại độ chính thống của tài liệu. Không chấp nhận các nguồn từ blog cá nhân, mạng xã hội." },
-                    { id: "tl9", type: "negative", label: "Lạm dụng Wikipedia/blog", text: "Lạm dụng Wikipedia hoặc các trang hỏi đáp làm nguồn tham khảo chính." },
-                    { id: "tl7", type: "negative", label: "Tài liệu quá cũ", text: "Sử dụng nhiều tài liệu đã quá cũ, số liệu lỗi thời không còn phù hợp." },
-                    { id: "tl4", type: "negative", label: "Có TLTK nhưng không trích dẫn", text: "Các tài liệu ở danh mục cuối bài không được trích dẫn (in-text citation) trong nội dung. Nếu không trích dẫn, hãy bỏ ra khỏi danh sách." },
-                    { id: "tl5", type: "negative", label: "Thiếu trích dẫn nội dung", text: "Cần bổ sung trích dẫn nguồn trực tiếp vào các đoạn nội dung trong bài báo cáo." }
+                    { id: "tl1", type: "positive", label: "Chuẩn APA", text: "Trình bày danh mục chuẩn định dạng APA." },
+                    { id: "tl2", type: "negative", label: "Sai APA", text: "Trình bày lộn xộn, sai quy định APA." },
+
+                    { id: "tl8", type: "positive", label: "Nguồn uy tín", text: "Sách, báo khoa học, trang .edu, .org chính thống." },
+                    { id: "tl3", type: "negative", label: "Nguồn rác/Wiki", text: "Trích xuất từ Blog, mạng xã hội, Wikipedia." },
+
+                    { id: "tl6", type: "positive", label: "Tài liệu mới", text: "Cập nhật dữ liệu mới (< 5 năm)." },
+                    { id: "tl7", type: "negative", label: "Tài liệu cũ", text: "Dữ liệu quá cũ, hết tính thời sự." },
+
+                    { id: "tl10", type: "positive", label: "Có trích dẫn (In-text)", text: "Có gắn số/tên tác giả trực tiếp vào đoạn văn." },
+                    { id: "tl4", type: "negative", label: "Thiếu trích dẫn (In-text)", text: "Có danh mục cuối bài nhưng trong bài không trích nguồn." }
                 ]
             },
             {
-                id: "c_slide", title: "4. Thiết kế Slide Thuyết trình", icon: "fa-desktop",
+                id: "c_slide", title: "4. Thiết kế Slide", icon: "fa-desktop",
                 options: [
-                    { id: "sl1", type: "positive", label: "Rõ ràng, chữ & bố cục tốt", text: "Slide thiết kế rõ ràng, có số trang, số lượng từ và cỡ chữ phù hợp, dễ theo dõi." },
-                    { id: "sl2", type: "positive", label: "Hình ảnh tương thích", text: "Hình ảnh chèn trên slide mang tính thẩm mỹ và tương thích tốt với nội dung trình bày." },
-                    { id: "sl6", type: "positive", label: "Dùng Infographic hiệu quả", text: "Sử dụng các sơ đồ, Infographic rất hiệu quả để tóm tắt thông tin thay cho văn bản dài." },
-                    { id: "sl8", type: "positive", label: "Hiệu ứng tinh tế", text: "Hiệu ứng chuyển cảnh (transition) và xuất hiện (animation) được sử dụng tinh tế, chuyên nghiệp." },
-                    { id: "sl10", type: "positive", label: "Có Slide Tổng kết", text: "Có slide tóm tắt (Takeaways/Summary) rất ấn tượng ở cuối bài." },
-                    { id: "sl3", type: "negative", label: "Quá nhiều chữ / Chữ nhỏ", text: "Chữ trên slide không phù hợp (quá nhiều chữ, cỡ chữ nhỏ hơn 18pt khiến khán giả khó đọc)." },
-                    { id: "sl7", type: "negative", label: "Tương phản màu kém", text: "Sử dụng phông nền và màu chữ bị chìm (độ tương phản kém) gây lóa hoặc khó đọc." },
-                    { id: "sl9", type: "negative", label: "Hiệu ứng rối mắt", text: "Lạm dụng hiệu ứng bay nhảy lộn xộn, rối mắt, làm mất tập trung." },
-                    { id: "sl11", type: "negative", label: "Lỗi Font chữ", text: "Slide bị lỗi font chữ tiếng Việt, gây mất thẩm mỹ." },
-                    { id: "sl4", type: "negative", label: "Hình ảnh không liên quan", text: "Hình ảnh chèn trên slide chỉ mang tính trang trí, không tương thích với nội dung." },
-                    { id: "sl5", type: "negative", label: "Thiếu số trang/Phân công", text: "Slide không rõ ràng, thiếu số trang để khán giả theo dõi, thiếu thông tin người phân công." }
+                    { id: "sl12", type: "positive", label: "Chữ vừa đủ (>=20pt)", text: "Tuân thủ 6x6, cỡ chữ to, rõ, dễ đọc." },
+                    { id: "sl3", type: "negative", label: "Nhiều chữ (<20pt)", text: "Nhồi nhét chữ, cỡ chữ quá nhỏ (<20pt)." },
+
+                    { id: "sl1", type: "positive", label: "Bố cục đẹp", text: "Slide gọn gàng, thẩm mỹ, có độ tương phản tốt." },
+                    { id: "sl7", type: "negative", label: "Bố cục rối", text: "Màu chìm, rối mắt, khó đọc." },
+
+                    { id: "sl2", type: "positive", label: "Hình phù hợp", text: "Hình ảnh sát với nội dung bài." },
+                    { id: "sl4", type: "negative", label: "Hình đối phó", text: "Hình chèn vô tội vạ, chỉ để trang trí." },
+
+                    { id: "sl6", type: "positive", label: "Có Infographic", text: "Biết dùng sơ đồ, hình khối tóm tắt ý." },
+                    { id: "sl14", type: "negative", label: "Chữ toàn tập", text: "Chỉ dùng bullet point, thiếu vắng sơ đồ/infographic." },
+
+                    { id: "sl8", type: "positive", label: "Hiệu ứng êm", text: "Chuyển cảnh tinh tế, mượt mà." },
+                    { id: "sl9", type: "negative", label: "Hiệu ứng rối", text: "Bay nhảy lộn xộn, chóng mặt." },
+
+                    { id: "sl15", type: "positive", label: "Đủ trang/Tên", text: "Có số trang và ghi tên người nói góc slide." },
+                    { id: "sl5", type: "negative", label: "Thiếu trang/Tên", text: "Không số trang, không biết ai nói phần nào." },
+
+                    { id: "sl16", type: "positive", label: "Số slide hợp lý", text: "Số lượng slide khớp với thời gian cho phép." },
+                    { id: "sl13", type: "negative", label: "Quá nhiều slide", text: "Chạy slide liên tục (VD: >60 slide/30 phút)." }
                 ]
             },
             {
                 id: "c_noidung", title: "5. Nội dung & Tương tác", icon: "fa-file-signature",
                 options: [
-                    { id: "nd1", type: "positive", label: "Bố cục logic, nội dung sâu", text: "Bài báo cáo có bố cục rõ ràng, đào sâu được vấn đề cốt lõi." },
-                    { id: "nd6", type: "positive", label: "Có tính sáng tạo", text: "Nội dung mang tính sáng tạo cao, có góc nhìn mới lạ và phản biện sắc sảo." },
-                    { id: "nd8", type: "positive", label: "Nhiều Case study/Thực tế", text: "Sử dụng nhiều dẫn chứng thực tế, case study cụ thể sinh động." },
-                    { id: "nd2", type: "positive", label: "Có tương tác/Bài tập lớp", text: "Nhóm có thiết kế các bài tập, minigame tương tác tốt với lớp, khuấy động được không khí." },
-                    { id: "nd10", type: "positive", label: "Ứng dụng Công nghệ tốt", text: "Ứng dụng tốt các công cụ nền tảng (Kahoot, Menti, Quizizz...) để thu hút khán giả." },
-                    { id: "nd3", type: "negative", label: "Nội dung trùng lặp", text: "Nội dung trình bày giữa các phần còn lủng củng, trùng lặp ý nhau." },
-                    { id: "nd7", type: "negative", label: "Lan man, lạc đề", text: "Nội dung có phần lan man, không đi thẳng vào trọng tâm câu hỏi nghiên cứu." },
-                    { id: "nd9", type: "negative", label: "Lý thuyết suông", text: "Bài báo cáo thiên về lý thuyết suông, thiếu sự liên hệ với thực tiễn doanh nghiệp/xã hội." },
-                    { id: "nd11", type: "negative", label: "Trò chơi làm loãng bài", text: "Trò chơi tương tác chiếm quá nhiều thời gian làm loãng đi nội dung học thuật chính." },
-                    { id: "nd4", type: "negative", label: "Cần sửa lại Dàn bài", text: "Cần cấu trúc và chỉnh sửa lại dàn bài, mục lục để logic hơn." },
-                    { id: "nd5", type: "negative", label: "Thiếu tương tác khán giả", text: "Thuyết trình một chiều, không có hoạt động/bài tập tương tác với lớp." }
+                    { id: "nd1", type: "positive", label: "Phân tích sâu", text: "Đào sâu vấn đề, có so sánh, đối chiếu." },
+                    { id: "nd12", type: "negative", label: "Phân tích nông", text: "Chỉ liệt kê bề mặt, thiếu phản biện." },
+
+                    { id: "nd8", type: "positive", label: "Có Case Study", text: "Có dẫn chứng, ví dụ thực tế doanh nghiệp/xã hội." },
+                    { id: "nd9", type: "negative", label: "Lý thuyết suông", text: "Nói lý thuyết dông dài, không có thực tế." },
+
+                    { id: "nd14", type: "positive", label: "Đúng trọng tâm", text: "Giải quyết đúng câu hỏi/yêu cầu đề tài." },
+                    { id: "nd7", type: "negative", label: "Lạc đề/Dư thừa", text: "Lan man sang ý khác hoặc chèn mục không cần thiết." },
+
+                    { id: "nd15", type: "positive", label: "Logic, liền mạch", text: "Các phần kết nối chặt chẽ." },
+                    { id: "nd3", type: "negative", label: "Lặp ý, lủng củng", text: "Các thành viên nói trùng ý nhau, rời rạc." },
+
+                    { id: "nd2", type: "positive", label: "Game/Tương tác hay", text: "Có Kahoot, Minigame... thu hút lớp." },
+                    { id: "nd5", type: "negative", label: "Thiếu tương tác", text: "Nói một chiều, gây buồn ngủ." },
+                    { id: "nd11", type: "negative", label: "Game loãng bài", text: "Trò chơi tốn quá nhiều thời gian, lấn át học thuật." }
                 ]
             },
             {
                 id: "c_giongnoi", title: "6. Giọng nói & Diễn đạt", icon: "fa-microphone",
                 options: [
-                    { id: "gn1", type: "positive", label: "To rõ, lưu loát", text: "Giọng nói có sinh lực, âm lượng to, rõ ràng. Tốc độ nói vừa phải, diễn đạt tự nhiên như trò chuyện." },
-                    { id: "gn5", type: "positive", label: "Nhấn nhá từ khóa tốt", text: "Biết cách nhấn nhá vào các từ khóa quan trọng và có những khoảng lặng (pause) hợp lý." },
-                    { id: "gn7", type: "positive", label: "Truyền cảm hứng", text: "Phong cách thuyết trình thể hiện sự nhiệt huyết, năng lượng và truyền cảm hứng." },
-                    { id: "gn9", type: "positive", label: "Dùng từ chuyên ngành chuẩn", text: "Sử dụng từ ngữ chuyên ngành cực kỳ chuẩn xác và chuyên nghiệp." },
-                    { id: "gn2", type: "negative", label: "Nhỏ, đều đều (Monotone)", text: "Giọng nói đều đều, thiếu cảm xúc, âm lượng nhỏ khiến người nghe mệt mỏi, khó tiếp thu." },
-                    { id: "gn8", type: "negative", label: "Run rẩy, thiếu tự tin", text: "Giọng nói còn run rẩy, thể hiện rõ sự căng thẳng và thiếu tự tin." },
-                    { id: "gn6", type: "negative", label: "Nói lắp / Không rõ chữ", text: "Phát âm không rõ chữ, tốc độ quá nhanh hoặc bị nói lắp nhiều." },
-                    { id: "gn3", type: "negative", label: "Đọc thuộc lòng / Nhìn giấy", text: "Mắc lỗi 'đọc văn bản': lệ thuộc hoàn toàn vào giấy/điện thoại hoặc đọc nguyên văn trên slide." },
-                    { id: "gn4", type: "negative", label: "Nhiều từ đệm (À, ừm)", text: "Sử dụng quá nhiều từ ngữ ấp úng, từ đệm (à, ừm, thì, là...) làm ngắt quãng mạch cảm xúc." }
+                    { id: "gn1", type: "positive", label: "Nói to rõ", text: "Âm lượng tốt, sinh lực, vang rõ." },
+                    { id: "gn2", type: "negative", label: "Nói nhỏ/Đều đều", text: "Giọng nhỏ, ru ngủ, thiếu điểm nhấn." },
+
+                    { id: "gn10", type: "positive", label: "Lưu loát", text: "Trôi chảy, làm chủ ngôn từ." },
+                    { id: "gn6", type: "negative", label: "Vấp/À ừm", text: "Dùng nhiều từ đệm (à, ừm), nói lắp." },
+
+                    { id: "gn7", type: "positive", label: "Tự tin, truyền cảm", text: "Nhiệt huyết, lôi cuốn khán giả." },
+                    { id: "gn8", type: "negative", label: "Run rẩy", text: "Căng thẳng, hồi hộp, mất bình tĩnh." },
+
+                    { id: "gn11", type: "positive", label: "Nói tự nhiên", text: "Diễn đạt như đang kể chuyện/trò chuyện." },
+                    { id: "gn3", type: "negative", label: "Đọc slide/giấy", text: "Mắt dán chặt vào giấy, điện thoại hoặc màn hình." }
                 ]
             },
             {
                 id: "c_body", title: "7. Ngôn ngữ cơ thể & Tác phong", icon: "fa-user-tie",
                 options: [
-                    { id: "bd1", type: "positive", label: "Giao tiếp mắt tốt (Eye-contact)", text: "Giao tiếp mắt xuất sắc, biết phân bổ ánh mắt bao quát toàn hội trường, duy trì kết nối." },
-                    { id: "bd8", type: "positive", label: "Làm chủ sân khấu", text: "Di chuyển linh hoạt, làm chủ không gian sân khấu rất tự nhiên." },
-                    { id: "bd2", type: "positive", label: "Dùng tay bổ trợ tốt", text: "Dáng đứng vững chãi; ngôn ngữ đôi tay linh hoạt để bổ trợ cực tốt cho lời nói." },
-                    { id: "bd10", type: "positive", label: "Biểu cảm tươi tắn", text: "Nét mặt tươi tắn, hay mỉm cười tạo thiện cảm ngay từ những giây đầu tiên." },
-                    { id: "bd3", type: "positive", label: "Trang phục chuyên nghiệp", text: "Trang phục nhóm đồng bộ, lịch sự, chuyên nghiệp, thể hiện sự tôn trọng môi trường học thuật." },
-                    { id: "bd4", type: "negative", label: "Đứng chôn chân / Quay lưng", text: "Đứng 'chôn chân' một chỗ bám chặt bục giảng, hoặc quay lưng lại hoàn toàn với khán giả để đọc slide." },
-                    { id: "bd9", type: "negative", label: "Đứng che màn hình chiếu", text: "Vị trí đứng chưa tinh tế, che khuất màn hình chiếu của khán giả." },
-                    { id: "bd5", type: "negative", label: "Nhìn trần nhà / Đất", text: "Thiếu giao tiếp mắt, thường xuyên nhìn trần nhà, nhìn xuống đất hoặc chỉ nhìn chằm chằm một điểm." },
-                    { id: "bd11", type: "negative", label: "Biểu cảm căng thẳng", text: "Biểu cảm quá căng thẳng, cau mày hoặc thái độ cợt nhả không phù hợp." },
-                    { id: "bd12", type: "negative", label: "Chỉ tay vào khán giả", text: "Có thói quen chỉ ngón trỏ vào khán giả - một hành động ngôn ngữ cơ thể thiếu lịch sự." },
-                    { id: "bd6", type: "negative", label: "Hành động vô thức thừa thãi", text: "Tay chân thừa thãi, có các hành động vô thức do căng thẳng (xoay bút, vò gấu áo, khoanh tay)." },
-                    { id: "bd7", type: "negative", label: "Trang phục chưa phù hợp", text: "Trang phục còn luộm thuộm, thiếu đồng bộ, chưa phù hợp với tính chất trang trọng của buổi báo cáo." },
-                    { id: "bd3", type: "negative", label: "Không chào", text: "Mở đầu và kết thúc báo cáo, nhóm không thực hiện qui trình chào người nghe, thể hiện thái độ tôn trọng." }
+                    { id: "bd1", type: "positive", label: "Có Eye-contact", text: "Nhìn bao quát lớp, giao tiếp mắt tốt." },
+                    { id: "bd5", type: "negative", label: "Thiếu Eye-contact", text: "Nhìn trần nhà, nhìn đất hoặc nhìn giấy." },
+
+                    { id: "bd8", type: "positive", label: "Làm chủ sân khấu", text: "Di chuyển tự nhiên, mở không gian." },
+                    { id: "bd4", type: "negative", label: "Đứng chôn chân", text: "Bám bục giảng, hoặc đứng che mất slide của lớp." },
+
+                    { id: "bd2", type: "positive", label: "Tay bổ trợ tốt", text: "Dùng tay linh hoạt minh họa cho lời nói." },
+                    { id: "bd6", type: "negative", label: "Tay thừa/Chỉ trỏ", text: "Vò áo, bẻ tay, xoay bút hoặc chỉ trỏ vào người nghe." },
+
+                    { id: "bd13", type: "positive", label: "Chuyển phần mượt", text: "Giới thiệu người tiếp theo trơn tru." },
+                    { id: "bd14", type: "negative", label: "Chuyển phần lúng túng", text: "Đùn đẩy, ngập ngừng khi đổi người nói." },
+
+                    { id: "bd3", type: "positive", label: "Trang phục chuẩn", text: "Đồng bộ, lịch sự, chuyên nghiệp." },
+                    { id: "bd7", type: "negative", label: "Trang phục sai", text: "Luộm thuộm, không đúng quy định." },
+
+                    { id: "bd16", type: "positive", label: "Có chào hỏi", text: "Chào mở đầu và cảm ơn kết thúc lịch sự." },
+                    { id: "bd15", type: "negative", label: "Không chào hỏi", text: "Bỏ qua nghi thức chào sân/kết thúc." }
                 ]
             },
             {
                 id: "c_attitude", title: "8. Thái độ & Trách nhiệm", icon: "fa-star",
                 options: [
-                    { id: "td1", type: "positive", label: "Nộp bài đúng hạn", text: "Nhóm tuân thủ tốt kỷ luật, nộp bài báo cáo đúng thời hạn quy định." },
-                    { id: "td3", type: "positive", label: "Cầu thị, lắng nghe", text: "Thể hiện tinh thần cầu thị, cởi mở tiếp thu các ý kiến đóng góp từ Giảng viên và lớp." },
-                    { id: "td5", type: "positive", label: "Tôn trọng nhóm bạn", text: "Tôn trọng, chú ý lắng nghe và đặt câu hỏi mang tính xây dựng cho các nhóm khác." },
-                    { id: "td2", type: "negative", label: "Nộp bài trễ hạn", text: "Vi phạm kỷ luật học tập: Nộp bài báo cáo trễ so với deadline hệ thống." },
-                    { id: "td4", type: "negative", label: "Bảo thủ, cố chấp cãi lý", text: "Thái độ còn bảo thủ, có xu hướng cố chấp cãi lý tay đôi thay vì ghi nhận góp ý." },
-                    { id: "td6", type: "negative", label: "Không chuẩn bị kỹ thuật", text: "Không chủ động test thiết bị trước giờ học, làm mất thời gian khắc phục sự cố của lớp." }
+                    { id: "td1", type: "positive", label: "Nộp đúng hạn", text: "Tuân thủ deadline hệ thống." },
+                    { id: "td2", type: "negative", label: "Nộp trễ hạn", text: "Nộp bài sau deadline." },
+
+                    { id: "td3", type: "positive", label: "Cầu thị lắng nghe", text: "Ghi nhận góp ý vui vẻ." },
+                    { id: "td4", type: "negative", label: "Bảo thủ cãi lý", text: "Chống chế, không tiếp thu." },
+
+                    { id: "td5", type: "positive", label: "Tương tác nhóm bạn", text: "Lắng nghe, đặt câu hỏi cho nhóm khác." },
+                    { id: "td7", type: "negative", label: "Bỏ mặc nhóm bạn", text: "Làm việc riêng, ồn ào khi nhóm khác báo cáo." }
                 ]
             }
         ];
 
         // ==========================================
-        // DATA: ĐÁNH GIÁ CÁ NHÂN (10%)
+        // DATA: ĐÁNH GIÁ CÁ NHÂN (Cặp Đối Lập & Rất Ngắn Gọn)
         // ==========================================
         const individualCriteriaData = [
             {
                 id: "i_phongcach", title: "A. Phong cách & Tương tác", icon: "fa-user-tie",
                 options: [
-                    { id: "i_pc1", type: "positive", label: "Tự tin", text: "tự tin" },
-                    { id: "i_pc2", type: "positive", label: "Có quan sát lớp", text: "có quan sát lớp" },
-                    { id: "i_pc3", type: "positive", label: "Có tương tác với lớp", text: "có tương tác với lớp" },
-                    { id: "i_pc4", type: "positive", label: "Có tương tác với nhóm", text: "có tương tác với nhau" },
-                    { id: "i_pc5", type: "positive", label: "Xử lý tình huống tốt", text: "xử lý tình huống phát sinh tốt" },
-                    { id: "i_pc6", type: "negative", label: "Chưa tự tin", text: "chưa tự tin" },
-                    { id: "i_pc7", type: "negative", label: "Còn nhìn/đọc slide", text: "còn nhìn đọc slide" },
-                    { id: "i_pc8", type: "negative", label: "Không có tương tác", text: "không có tương tác với lớp" },
-                    { id: "i_pc9", type: "negative", label: "Trình bày kiểu học vẹt", text: "trình bày kiểu thuộc lòng" }
+                    { id: "i_pc1", type: "positive", label: "Tự tin", text: "Phong thái chững chạc, làm chủ sân khấu." },
+                    { id: "i_pc6", type: "negative", label: "Thiếu tự tin", text: "Run rẩy, ấp úng." },
+
+                    { id: "i_pc2", type: "positive", label: "Quan sát lớp", text: "Tương tác mắt bao quát." },
+                    { id: "i_pc7", type: "negative", label: "Đọc slide", text: "Mắt dán chặt vào màn hình/giấy." },
+
+                    { id: "i_pc3", type: "positive", label: "Tương tác lớp", text: "Biết đặt câu hỏi gợi mở khán giả." },
+                    { id: "i_pc8", type: "negative", label: "Không tương tác", text: "Nói như cỗ máy, phớt lờ người nghe." },
+
+                    { id: "i_pc10", type: "positive", label: "Nói tự nhiên", text: "Nói chuyện có cảm xúc." },
+                    { id: "i_pc9", type: "negative", label: "Học vẹt", text: "Trả bài thuộc lòng." },
+
+                    { id: "i_pc4", type: "positive", label: "Kết nối nhóm", text: "Phối hợp ăn ý với đồng đội." },
+                    { id: "i_pc11", type: "negative", label: "Rời rạc", text: "Đứng tách biệt, không hỗ trợ nhóm." },
+
+                    { id: "i_pc5", type: "positive", label: "Xử lý bén", text: "Ứng biến nhanh khi có sự cố." },
+                    { id: "i_pc12", type: "negative", label: "Lúng túng", text: "Đứng hình khi có sự cố/câu hỏi khó." }
                 ]
             },
             {
                 id: "i_giongnoi", title: "B. Giọng nói & Diễn đạt", icon: "fa-microphone",
                 options: [
-                    { id: "i_gn1", type: "positive", label: "Trình bày rõ ràng", text: "trình bày rõ ràng" },
-                    { id: "i_gn2", type: "positive", label: "Giọng to rõ", text: "giọng rõ" },
-                    { id: "i_gn3", type: "positive", label: "Âm lượng phù hợp", text: "âm lượng phù hợp" },
-                    { id: "i_gn4", type: "positive", label: "Diễn đạt trôi chảy", text: "diễn đạt trôi chảy" },
-                    { id: "i_gn5", type: "positive", label: "Ngắt nghỉ phù hợp", text: "kỹ năng trình bày tốt có ngắt nghỉ phù hợp" },
-                    { id: "i_gn6", type: "negative", label: "Còn vấp", text: "còn vấp khi thuyết trình" },
-                    { id: "i_gn7", type: "negative", label: "Tốc độ quá nhanh", text: "tốc độ nói quá nhanh" },
-                    { id: "i_gn8", type: "negative", label: "Âm lượng chưa phù hợp", text: "âm lượng chưa phù hợp" },
-                    { id: "i_gn9", type: "negative", label: "Giọng vùng miền khó nghe", text: "giọng vùng miền nên nghe chưa rõ" }
+                    { id: "i_gn2", type: "positive", label: "To, rõ chữ", text: "Âm lượng tốt, tròn vành." },
+                    { id: "i_gn8", type: "negative", label: "Nhỏ, khó nghe", text: "Lý nhí, hoặc giọng vùng miền khó nghe." },
+
+                    { id: "i_gn4", type: "positive", label: "Trôi chảy", text: "Lưu loát, liền mạch." },
+                    { id: "i_gn6", type: "negative", label: "Còn vấp", text: "À ừm nhiều, nói lắp." },
+
+                    { id: "i_gn10", type: "positive", label: "Tốc độ vừa", text: "Nhịp điệu dễ theo dõi." },
+                    { id: "i_gn7", type: "negative", label: "Nói quá nhanh", text: "Bắn rap, người nghe không kịp hiểu." },
+
+                    { id: "i_gn5", type: "positive", label: "Ngắt nghỉ tốt", text: "Biết dừng đúng chỗ để nhấn mạnh." },
+                    { id: "i_gn11", type: "negative", label: "Nói một hơi", text: "Không có điểm dừng, nghe mệt." }
                 ]
             },
             {
                 id: "i_noidung", title: "C. Nội dung cá nhân", icon: "fa-brain",
                 options: [
-                    { id: "i_nd1", type: "positive", label: "Vững nội dung kiến thức", text: "vững nội dung kiến thức" },
-                    { id: "i_nd2", type: "positive", label: "Có cho ví dụ minh họa", text: "có cho ví dụ minh họa" },
-                    { id: "i_nd3", type: "negative", label: "Không cho ví dụ", text: "không cho ví dụ minh họa" }
+                    { id: "i_nd1", type: "positive", label: "Nắm vững bài", text: "Hiểu sâu phần mình nói." },
+                    { id: "i_nd4", type: "negative", label: "Quên/Sai kiến thức", text: "Nói sai trọng tâm hoặc quên bài." },
+
+                    { id: "i_nd2", type: "positive", label: "Có ví dụ", text: "Biết lồng ghép ví dụ dễ hiểu." },
+                    { id: "i_nd3", type: "negative", label: "Thiếu ví dụ", text: "Nói toàn lý thuyết suông." }
                 ]
             }
         ];
-
         let evaluatedMembers = [];
 
         // --- TAB LOGIC ---
