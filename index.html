@@ -539,184 +539,61 @@
                 id: "c_hinhthuc_bc", title: "2. Hình thức Báo cáo (Word/PDF)", icon: "fa-book",
 
                 options: [
-                      // ==========================================
-                      // 1. NHÓM TIÊU CHÍ: HÌNH THỨC & TRÌNH BÀY
-                      // ==========================================
-                      { 
-                        id: "ht_pos_01", 
-                        type: "positive", 
-                        label: "Hình thức chuẩn, chuyên nghiệp", 
-                        text: "Báo cáo chỉn chu, đúng chuẩn form mẫu (trang bìa, mục lục, lời cảm ơn...). Toàn bộ văn bản nhất quán về font chữ, cỡ chữ, giãn dòng, lùi đầu dòng và in ấn sắc nét." 
-                      },
-                      { 
-                        id: "ht_neu_01", 
-                        type: "neutral", 
-                        label: "Trình bày đạt mức cơ bản", 
-                        text: "Tuân thủ định dạng tối thiểu nhưng chưa nổi bật. Vẫn còn sót vài lỗi typo nhỏ hoặc font/cỡ chữ đôi chỗ chưa thực sự đồng nhất." 
-                      },
-                      { 
-                        id: "ht_neg_01", 
-                        type: "negative", 
-                        label: "Trình bày cẩu thả, sai định dạng", 
-                        text: "Mắc nhiều lỗi chính tả/ngữ pháp. Sai hoặc thiếu form mẫu, font chữ lộn xộn, thiếu lùi đầu dòng, hệ thống bullet point sai chuẩn hoặc xô lệch bảng biểu." 
-                      },
-                      { 
-                        id: "ht_neg_02", 
-                        type: "negative", 
-                        label: "Lỗi trang bìa/Thông tin", 
-                        text: "Trang bìa thiếu các thông tin bắt buộc (như MSSV, mã nhóm), sai format hoặc thiếu Logo trường/khoa." 
-                      },
-                    
-                      // ==========================================
-                      // 2. NHÓM TIÊU CHÍ: CẤU TRÚC & LIÊN KẾT
-                      // ==========================================
-                      { 
-                        id: "ct_pos_01", 
-                        type: "positive", 
-                        label: "Cấu trúc khoa học, mạch lạc", 
-                        text: "Bố cục nội dung hợp lý, phân chia chương mục rõ ràng theo logic học thuật. Lập luận chặt chẽ, văn phong xuyên suốt và liên kết mượt mà." 
-                      },
-                      { 
-                        id: "ct_neu_01", 
-                        type: "neutral", 
-                        label: "Cấu trúc cơ bản, chuyển ý gượng", 
-                        text: "Cấu trúc tương đối rõ ràng, giải quyết được vấn đề cơ bản nhưng phần chuyển ý giữa các đoạn/chương chưa thực sự tự nhiên." 
-                      },
-                      { 
-                        id: "ct_neg_01", 
-                        type: "negative", 
-                        label: "Bố cục rời rạc, chắp vá", 
-                        text: "Các phần không có sự liên kết, văn phong lộn xộn. Có dấu hiệu mạnh ai nấy viết, ghép bài nhưng thiếu khâu kiểm tra, biên tập lại." 
-                      },
-                    
-                      // ==========================================
-                      // 3. NHÓM TIÊU CHÍ: HÌNH ẢNH & MINH HỌA
-                      // ==========================================
-                      { 
-                        id: "ha_pos_01", 
-                        type: "positive", 
-                        label: "Minh họa trực quan, chuyên nghiệp", 
-                        text: "Hình ảnh, sơ đồ tự xây dựng có tính phân tích cao. Biểu đồ/đồ thị được đầu tư trực quan, phong phú và có chú thích, nguồn rõ ràng." 
-                      },
-                      { 
-                        id: "ha_neu_01", 
-                        type: "neutral", 
-                        label: "Hình ảnh mức trung bình", 
-                        text: "Có sử dụng hình ảnh/biểu đồ minh họa nhưng ở mức cơ bản, chưa thực sự nổi bật hoặc chưa được khai thác sâu vào phân tích." 
-                      },
-                      { 
-                        id: "ha_neg_01", 
-                        type: "negative", 
-                        label: "Thiếu hình ảnh/Kém chất lượng", 
-                        text: "Bài báo cáo hoàn toàn thiếu ví dụ minh họa, hoặc sử dụng hình ảnh/biểu đồ có chất lượng thấp, mờ, không liên quan đến nội dung." 
-                      },
-                      { 
-                        id: "ha_neg_02", 
-                        type: "negative", 
-                        label: "Thiếu chú thích minh họa", 
-                        text: "Hình ảnh, biểu đồ đưa vào bài nhưng thiếu tiêu đề, thiếu phần chú thích diễn giải hoặc không ghi rõ nguồn gốc." 
-                      },
-                    
-                      // ==========================================
-                      // 4. NHÓM TIÊU CHÍ: NỘI DUNG & HÀM LƯỢNG
-                      // ==========================================
-                      { 
-                        id: "nd_pos_01", 
-                        type: "positive", 
-                        label: "Phân tích sắc bén", 
-                        text: "Nội dung đi sâu vào trọng tâm, có ví dụ thực tế minh họa sinh động và thể hiện được tư duy phản biện sắc bén của nhóm." 
-                      },
-                      { 
-                        id: "nd_neu_01", 
-                        type: "neutral", 
-                        label: "An toàn, thiếu chiều sâu", 
-                        text: "Nội dung đáp ứng đủ yêu cầu tối thiểu của đề tài nhưng mang tính liệt kê lý thuyết, an toàn và thiếu sự đào sâu diễn giải." 
-                      },
-                      { 
-                        id: "nd_neg_01", 
-                        type: "negative", 
-                        label: "Lan man, sáo rỗng", 
-                        text: "Nội dung bài viết nông, dùng nhiều từ ngữ chung chung, sáo rỗng để kéo dài văn bản nhưng không giải quyết đúng trọng tâm." 
-                      },
-                    
-                      // ==========================================
-                      // 5. NHÓM TIÊU CHÍ: TRÍCH DẪN & LIÊM CHÍNH
-                      // ==========================================
-                      { 
-                        id: "tc_pos_01", 
-                        type: "positive", 
-                        label: "Trích dẫn chuẩn mực, uy tín", 
-                        text: "Danh mục tài liệu chuẩn format APA, sử dụng các nguồn chính thống, độ tin cậy cao và có đối chiếu thông tin chéo." 
-                      },
-                      { 
-                        id: "tc_pos_02", 
-                        type: "positive", 
-                        label: "Nguồn cập nhật, quốc tế", 
-                        text: "Biết tìm kiếm và sử dụng tài liệu tiếng Anh/Quốc tế có giá trị, ưu tiên cập nhật các nguồn mới xuất bản (trong 5 năm gần đây)." 
-                      },
-                      { 
-                        id: "tc_neu_01", 
-                        type: "neutral", 
-                        label: "Nguồn phổ thông", 
-                        text: "Có liệt kê nguồn nhưng chủ yếu là các website thông thường, định dạng trích dẫn đôi chỗ chưa thống nhất chuẩn." 
-                      },
-                      { 
-                        id: "tc_neg_01", 
-                        type: "negative", 
-                        label: "Sai format / Thiếu trích dẫn (In-text)", 
-                        text: "Sai chuẩn APA, sắp xếp lộn xộn. Đặc biệt: có danh mục tài liệu cuối bài nhưng hoàn toàn KHÔNG CÓ trích dẫn trực tiếp (in-text citation) trong các đoạn nội dung." 
-                      },
-                      { 
-                        id: "tc_neg_02", 
-                        type: "negative", 
-                        label: "Nguồn kém tin cậy / Cũ", 
-                        text: "Sử dụng tài liệu quá cũ, số liệu lỗi thời. Lạm dụng các nguồn không chính thống như Wikipedia, Blog cá nhân hoặc các trang mạng xã hội hỏi đáp." 
-                      },
-                      { 
-                        id: "tc_neg_03", 
-                        type: "negative", 
-                        label: "Dấu hiệu đạo văn (Plagiarism)", 
-                        text: "Phát hiện bài báo cáo có dấu hiệu cắt ghép, sao chép văn bản nguyên xi (copy-paste) từ Internet mà không hề trích dẫn." 
-                      },
-                    
-                      // ==========================================
-                      // 6. NHÓM TIÊU CHÍ: THỦ TỤC & ĐỒNG BỘ
-                      // ==========================================
-                      { 
-                        id: "td_neg_01", 
-                        type: "negative", 
-                        label: "Thiếu đồng bộ Word - Slide", 
-                        text: "Có sự lệch pha, không tương đồng giữa nội dung trình bày trong quyển báo cáo (Word) và trên bài thuyết trình (Slide)." 
-                      },
-                      { 
-                        id: "td_neg_02", 
-                        type: "negative", 
-                        label: "Thiếu thủ tục hành chính", 
-                        text: "Bài báo cáo nộp chưa đầy đủ thủ tục quy định (ví dụ: thiếu kẹp Rubric đánh giá, thiếu thứ tự thuyết trình...)." 
-                      }
-                    ]
+                  // 1. Tiêu chí: Hình thức và Tính chuyên nghiệp
+                  { id: "ht01", type: "positive", label: "Hình thức chuyên nghiệp", text: "Báo cáo rất chỉn chu, lề lối thống nhất, mục lục chính xác, in ấn sắc nét." },
+                  { id: "ht02", type: "neutral", label: "Đúng định dạng cơ bản", text: "Tuân thủ định dạng cơ bản nhưng còn vài lỗi typo hoặc font chữ chưa hoàn toàn đồng nhất." },
+                  { id: "ht03", type: "negative", label: "Trình bày cẩu thả", text: "Trình bày giống bản nháp, nhiều lỗi chính tả, xô lệch bảng biểu hoặc thiếu số trang." },                
+                  // 2. Tiêu chí: Cấu trúc logic và Sự liên kết văn phong
+                  { id: "ct01", type: "positive", label: "Cấu trúc chặt chẽ", text: "Lập luận chặt chẽ, văn phong xuyên suốt, các phần có sự liên kết mượt mà." },
+                  { id: "ct02", type: "neutral", label: "Chuyển ý gượng ép", text: "Giải quyết được vấn đề cơ bản nhưng phần chuyển ý giữa các chương chưa thực sự mượt mà." },
+                  { id: "ct03", type: "negative", label: "Thiếu liên kết, chắp vá", text: "Các phần không có sự liên kết, văn phong lộn xộn, có dấu hiệu chia việc nhưng không biên tập lại." },                
+                  // 3. Tiêu chí: Độ sâu của Nội dung và Hàm lượng phân tích
+                  { id: "nd01", type: "positive", label: "Phân tích sắc bén", text: "Nội dung sâu sắc, có ví dụ thực tế minh họa và thể hiện được tư duy phản biện tốt." },
+                  { id: "nd02", type: "neutral", label: "An toàn, thiếu chiều sâu", text: "Nội dung đáp ứng đủ yêu cầu đề tài nhưng mang tính liệt kê, thiếu sự đào sâu diễn giải." },
+                  { id: "nd03", type: "negative", label: "Lan man, sáo rỗng", text: "Nội dung nông, lan man, dùng nhiều từ ngữ chung chung sáo rỗng, chưa giải quyết đúng trọng tâm." },                
+                  // 4. Tiêu chí: Nguồn trích dẫn và Tính liêm chính học thuật
+                  { id: "tc01", type: "positive", label: "Trích dẫn chuẩn mực", text: "Danh mục tài liệu tham khảo chuẩn format, sử dụng các nguồn học thuật uy tín và có đối chiếu thông tin." },
+                  { id: "tc02", type: "neutral", label: "Nguồn tham khảo phổ thông", text: "Có liệt kê nguồn nhưng chủ yếu là các website thông thường, định dạng trích dẫn đôi chỗ chưa thống nhất." },
+                  { id: "tc03", type: "negative", label: "Trích dẫn sơ sài, thiếu tin cậy", text: "Danh mục tài liệu tham khảo quá sơ sài, sử dụng nguồn không đáng tin cậy hoặc không rõ nguồn gốc." },
+                                  // Các điểm cộng (Tích cực)
+                  {     id: "ht_pos_01",type: "positive",label: "Dàn bài và định dạng chuẩn", text: "Có dàn bài chung đúng yêu cầu (lời cảm ơn, mục lục, danh sách hình ảnh/bảng biểu). Trình bày đoạn đúng chuẩn." },
+                  // Các điểm trừ (Hạn chế)
+                  {     id: "ht_neg_01",  type: "negative",  label: "Thiếu thông tin bìa",     text: "Trang bìa trình bày thiếu các thông tin bắt buộc: thiếu MSSV, thiếu mã nhóm."   },
+                  {     id: "ht_neg_02",     type: "negative",     label: "Lỗi cỡ chữ và tiêu đề",     text: "Cỡ chữ không thống nhất trên toàn bài (lẫn lộn kích thước 12-13pt). Các tiêu đề, đề mục chữ to quá khổ, thiếu sự cân đối."   },
+                  {     id: "ht_neg_03",     type: "negative",     label: "Lỗi paragraph và Bullet point",     text: "Trình bày đoạn văn chưa lùi đầu dòng. Các gạch đầu dòng và hệ thống phân cấp mục chưa đúng chuẩn văn bản."   },
+                    { id: "hb1", type: "positive", label: "Đúng chuẩn form mẫu", text: "Báo cáo trình bày đúng chuẩn (căn lề, đánh số trang, trang bìa, lời cảm ơn, mục lục, danh mục biểu đồ/hình ảnh, viết tắt)." },
+                    { id: "hb9", type: "positive", label: "Cấu trúc mạch lạc", text: "Cấu trúc các đoạn văn mạch lạc, có tính liên kết cao và trình bày đẹp mắt." },
+                    { id: "hb7", type: "positive", label: "Biểu đồ tốt", text: "Có đầu tư sử dụng biểu đồ, đồ thị trực quan tự thiết kế rất chuyên nghiệp." },
+                    { id: "hb3", type: "positive", label: "Có hình ảnh minh họa", text: "Có ví dụ thực tế và hình ảnh minh họa phong phú trong báo cáo." },
+                    { id: "hb2", type: "negative", label: "Sai/Thiếu form mẫu", text: "Báo cáo trình bày chưa đúng mẫu quy định, thiếu các thành phần bắt buộc." },
+                    { id: "hb6", type: "negative", label: "Lỗi chính tả/Ngữ pháp", text: "Văn bản còn mắc nhiều lỗi chính tả, lỗi đánh máy và ngữ pháp cơ bản." },
+                    { id: "hb4", type: "negative", label: "Thiếu hình ảnh", text: "Bài báo cáo hoàn toàn thiếu ví dụ và hình ảnh minh họa thực tế." },
+                    { id: "hb5", type: "negative", label: "Trang bìa lỗi/Thiếu Logo", text: "Cần chú ý chỉnh chu lại trang bìa (thiếu logo trường/khoa, sai format)." },
+                    { id: "hb8", type: "negative", label: "Dấu hiệu sao chép", text: "Bài báo cáo có dấu hiệu cắt ghép, sao chép văn bản (copy-paste) mà không trích dẫn." },
+                    { id: "hb10", type: "negative", label: "word ngắn<>slide nhiều", text: "Bài báo cáo có dấu hiệu không tương đồng với bài thuyết trình." },
+                    { id: "hb11", type: "negative", label: "Quyển báo cáo thiếu rubric, thứ tự thuyết trình", text: "Bài báo cáo chưa đầy đủ thủ tục." },
+                    { id: "hb12", type: "positive", label: "Trình bày nhất quán", text: "Toàn bộ báo cáo được trình bày nhất quán về font chữ, cỡ chữ, giãn dòng và định dạng." },
+                    { id: "hb13", type: "positive", label: "Bố cục khoa học", text: "Bố cục nội dung hợp lý, phân chia chương mục rõ ràng theo logic học thuật." },
+                    { id: "hb14", type: "positive", label: "Minh họa tự xây dựng", text: "Hình ảnh, sơ đồ được nhóm tự xây dựng, có giá trị minh họa và phân tích cao." },
+                    { id: "hb15", type: "positive", label: "Chú thích đầy đủ", text: "Biểu đồ, hình ảnh có chú thích, nguồn và tiêu đề đầy đủ, rõ ràng." },                    
+                    { id: "hb16", type: "neutral", label: "Trình bày đạt mức cơ bản", text: "Báo cáo đáp ứng yêu cầu trình bày tối thiểu nhưng chưa có điểm nổi bật." },
+                    { id: "hb17", type: "neutral", label: "Cấu trúc tương đối rõ", text: "Cấu trúc báo cáo tương đối rõ ràng nhưng một số phần chuyển ý chưa mượt." },
+                    { id: "hb18", type: "neutral", label: "Hình ảnh mức trung bình", text: "Có sử dụng hình ảnh minh họa nhưng chưa thực sự nổi bật hoặc chưa được khai thác sâu." },                    
+                    { id: "hb19", type: "negative", label: "Thiếu chú thích", text: "Hình ảnh, biểu đồ thiếu chú thích hoặc không ghi rõ nguồn." },
+                    { id: "hb20", type: "negative", label: "Định dạng không nhất quán", text: "Font chữ, cỡ chữ hoặc căn lề không thống nhất giữa các phần." },
+                    { id: "hb21", type: "negative", label: "Bố cục rời rạc", text: "Bố cục nội dung thiếu logic, các phần trình bày rời rạc, khó theo dõi." },
+                    { id: "hb22", type: "negative", label: "Minh họa kém chất lượng", text: "Hình ảnh, biểu đồ có chất lượng thấp, mờ hoặc không liên quan đến nội dung." },
+                    { id: "tl1", type: "positive", label: "Chuẩn APA, chính thống", text: "Tài liệu tham khảo trình bày chuẩn APA, nguồn trích dẫn chính thống, có độ tin cậy cao." },
+                    { id: "tl6", type: "positive", label: "Nguồn mới (< 5 năm)", text: "Nhóm biết cập nhật và sử dụng các nguồn tài liệu mới xuất bản trong vòng 5 năm gần đây." },
+                    { id: "tl8", type: "positive", label: "Tài liệu quốc tế", text: "Biết cách tìm kiếm và tham khảo nhiều nguồn tài liệu bằng tiếng Anh/Quốc tế có giá trị cao." },
+                    { id: "tl2", type: "negative", label: "Sai format APA/Sắp xếp", text: "Tài liệu tham khảo trình bày chưa đúng quy định tiêu chuẩn APA, chưa sắp xếp theo thứ tự alpha, cần chỉnh sửa cấu trúc." },
+                    { id: "tl3", type: "negative", label: "Nguồn kém tin cậy", text: "Cần xem xét lại độ chính thống của tài liệu. Không chấp nhận các nguồn từ blog cá nhân, mạng xã hội." },
+                    { id: "tl9", type: "negative", label: "Lạm dụng Wikipedia/blog", text: "Lạm dụng Wikipedia hoặc các trang hỏi đáp làm nguồn tham khảo chính." },
+                    { id: "tl7", type: "negative", label: "Tài liệu quá cũ", text: "Sử dụng nhiều tài liệu đã quá cũ, số liệu lỗi thời không còn phù hợp." },
+                    { id: "tl4", type: "negative", label: "Có TLTK nhưng không trích dẫn", text: "Các tài liệu ở danh mục cuối bài không được trích dẫn (in-text citation) trong nội dung. Nếu không trích dẫn, hãy bỏ ra khỏi danh sách." },
+                    { id: "tl5", type: "negative", label: "Thiếu trích dẫn nội dung", text: "Cần bổ sung trích dẫn nguồn trực tiếp vào các đoạn nội dung trong bài báo cáo." }
 
-            },
-
-            {
-
-                id: "c_slide", title: "3. Thiết kế Slide Thuyết trình", icon: "fa-desktop",
-
-                options: [
-
-                    { id: "sl1", type: "positive", label: "Rõ ràng, chữ & bố cục tốt", text: "Slide thiết kế rõ ràng, có số trang, số lượng từ và cỡ chữ phù hợp, dễ theo dõi." },
-                    { id: "sl2", type: "positive", label: "Hình ảnh tương thích", text: "Hình ảnh chèn trên slide mang tính thẩm mỹ và tương thích tốt với nội dung trình bày." },
-                    { id: "sl6", type: "positive", label: "Dùng Infographic hiệu quả", text: "Sử dụng các sơ đồ, Infographic rất hiệu quả để tóm tắt thông tin thay cho văn bản dài." },
-                    { id: "sl8", type: "positive", label: "Hiệu ứng tinh tế", text: "Hiệu ứng chuyển cảnh (transition) và xuất hiện (animation) được sử dụng tinh tế, chuyên nghiệp." },
-                    { id: "sl10", type: "positive", label: "Có Slide Tổng kết", text: "Có slide tóm tắt (Takeaways/Summary) rất ấn tượng ở cuối bài." },
-                    { id: "sl3", type: "negative", label: "Quá nhiều chữ / Chữ nhỏ", text: "Chữ trên slide không phù hợp (quá nhiều chữ, cỡ chữ nhỏ hơn 18pt khiến khán giả khó đọc)." },
-                    { id: "sl7", type: "negative", label: "Tương phản màu kém", text: "Sử dụng phông nền và màu chữ bị chìm (độ tương phản kém) gây lóa hoặc khó đọc." },
-                    { id: "sl9", type: "negative", label: "Hiệu ứng rối mắt", text: "Lạm dụng hiệu ứng bay nhảy lộn xộn, rối mắt, làm mất tập trung." },
-                    { id: "sl11", type: "negative", label: "Lỗi Font chữ", text: "Slide bị lỗi font chữ tiếng Việt, gây mất thẩm mỹ." },
-                    { id: "sl4", type: "negative", label: "Hình ảnh không liên quan", text: "Hình ảnh chèn trên slide chỉ mang tính trang trí, không tương thích với nội dung." },
-                    { id: "sl5", type: "negative", label: "Thiếu số trang/Phân công", text: "Slide không rõ ràng, thiếu số trang để khán giả theo dõi, thiếu thông tin người phân công." }
-
-                ]
+                ]
 
             },
 
